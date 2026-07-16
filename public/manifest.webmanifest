@@ -1,0 +1,28 @@
+{
+  "name": "Klinik Padi Kalbar — Buku Saku OPT & Hara Padi",
+  "short_name": "Klinik Padi",
+  "description": "Buku saku digital hama, penyakit & masalah hara padi lahan tadah hujan Kalimantan Barat. Identifikasi cepat & pengendalian hama terpadu (PHT).",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fbfaf6",
+  "theme_color": "#1f7a43",
+  "lang": "id",
+  "dir": "ltr",
+  "categories": ["education", "productivity", "utilities"],
+  "icons": [
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-maskable.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

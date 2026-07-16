@@ -1,0 +1,30 @@
+{
+  "name": "klinik-padi-kalbar",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Aplikasi Buku Saku OPT & Hara Padi Lahan Tadah Hujan Kalimantan Barat",
+  "scripts": {
+    "export:konten": "python3 scripts/export_konten.py",
+    "sync:public": "node scripts/sync_public.mjs",
+    "predev": "npm run export:konten && npm run sync:public",
+    "prebuild": "npm run export:konten && npm run sync:public",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "^16.2.10",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.2",
+    "@types/node": "^26.1.1",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "postcss": "^8.5.19",
+    "tailwindcss": "^4.3.2",
+    "typescript": "^5.9.3"
+  }
+}
