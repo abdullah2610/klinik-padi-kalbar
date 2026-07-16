@@ -1,0 +1,1442 @@
+{
+  "meta": {
+    "judul": "Hama, Penyakit & Masalah Hara Tanaman Padi",
+    "subjudul": "di Lahan Tadah Hujan Kalimantan Barat",
+    "kicker": "BUKU SAKU LAPANGAN",
+    "penyusun": "Abdullah Umar, SP, MSc",
+    "institusi": "Balai Besar Penerapan Modernisasi Pertanian Kalimantan Barat",
+    "pendamping": [
+      "Digunakan berdampingan dengan",
+      "Buku Saku PM-AAS (BRMP, Kementerian Pertanian, 2026)"
+    ],
+    "org": "Balai Besar Penerapan Modernisasi Pertanian Kalbar",
+    "versi": "1.0",
+    "diekspor_pada": "2026-07-16T16:00:12",
+    "jumlah_entri": 24
+  },
+  "sections": [
+    {
+      "num": "1",
+      "kategori": "hama",
+      "title": "Hama",
+      "sub": "Organisme Pengganggu Hewan",
+      "color": "GREEN",
+      "light": "LGREEN",
+      "icon": "bug",
+      "key": "bug",
+      "jumlah": 11
+    },
+    {
+      "num": "2",
+      "kategori": "penyakit",
+      "title": "Penyakit",
+      "sub": "Patogen (Bakteri, Cendawan, Virus)",
+      "color": "TEAL",
+      "light": "LTEAL",
+      "icon": "microbe",
+      "key": "microbe",
+      "jumlah": 6
+    },
+    {
+      "num": "3",
+      "kategori": "hara",
+      "title": "Masalah Hara",
+      "sub": "Keracunan, Defisiensi Hara & Cekaman Air — Khas Tadah Hujan",
+      "color": "BROWN",
+      "light": "LBROWN",
+      "icon": "water",
+      "key": "water",
+      "jumlah": 7
+    }
+  ],
+  "legenda": [
+    {
+      "icon": "eye",
+      "label": "Gejala khas",
+      "color": "GREEN"
+    },
+    {
+      "icon": "compare",
+      "label": "Ciri pembeda",
+      "color": "TEAL"
+    },
+    {
+      "icon": "bug",
+      "label": "Penyebab (hama)",
+      "color": "BROWN"
+    },
+    {
+      "icon": "microbe",
+      "label": "Penyebab (penyakit)",
+      "color": "TEAL"
+    },
+    {
+      "icon": "water",
+      "label": "Kondisi / penyebab hara",
+      "color": "TEAL"
+    },
+    {
+      "icon": "down",
+      "label": "Dampak",
+      "color": "ALERT"
+    },
+    {
+      "icon": "check",
+      "label": "Identifikasi + ambang",
+      "color": "GREEN"
+    },
+    {
+      "icon": "shield",
+      "label": "Pengendalian PHT",
+      "color": "GREEN"
+    },
+    {
+      "icon": "bulb",
+      "label": "Tips lapangan",
+      "color": "AMBER_D"
+    }
+  ],
+  "cara_pakai": [
+    "Mulai dari Tabel Identifikasi Cepat: cocokkan gejala di lapangan dengan barisnya.",
+    "Buka entri lengkap, cek bagian 'Ciri pembeda' untuk memastikan bukan gangguan mirip.",
+    "Pakai 'Identifikasi lapangan' + ambang untuk memutuskan perlu-tidaknya tindakan.",
+    "Terapkan PHT berurutan: budidaya -> fisik/mekanik -> hayati -> kimia (pilihan terakhir).",
+    "Untuk masalah hara & air, perbaiki kesuburan tanah, pH, dan pengelolaan air dulu sebelum menyemprot."
+  ],
+  "alur_keputusan": "Temukan OPT -> Identifikasi -> Hitung populasi/luas (min. 10 titik zig-zag, 1x/minggu) -> Sudah capai ambang? Belum: pantau 3-7 hari. Sudah: kendalikan, utamakan musuh alami.",
+  "tentang": [
+    "Buku saku ini membantu penyuluh, petugas lapangan (POPT), dan petani mengenali secara cepat dan tepat gangguan utama tanaman padi di lahan tadah hujan Kalimantan Barat — seperti di Kabupaten Sekadau, Sintang, dan sekitarnya — lalu mengambil keputusan pengendalian yang benar.",
+    "Setiap gangguan diuraikan sistematis: nama umum & ilmiah, gejala khas, ciri pembeda, penyebab, kondisi pendukung, dampak, cara identifikasi lapangan, dan rekomendasi pengendalian hama terpadu (PHT).",
+    "Lahan tadah hujan menghadapi tantangan khas: bergantung penuh pada air hujan (rawan kekeringan) dan umumnya bertanah mineral masam (ultisol/podzolik) yang miskin hara. Buku ini menekankan hal tersebut, khususnya pada bagian Masalah Hara.",
+    "Buku ini dirancang berdampingan dengan Buku Saku PM-AAS (BRMP, Kementerian Pertanian, 2026). Rekomendasi bahan aktif dan ambang diselaraskan dengan pedoman PM-AAS dan Direktorat Perlindungan Tanaman Pangan."
+  ],
+  "tentang_box": {
+    "cakupan_title": "Cakupan",
+    "cakupan_lines": [
+      "24 gangguan: 11 hama, 6 penyakit, dan 7 masalah hara, cekaman air",
+      "& keracunan/defisiensi khas lahan tadah hujan (tanah mineral masam)."
+    ],
+    "catatan_title": "Catatan pemakaian",
+    "catatan_bullets": [
+      "Foto gejala bersumber dari publikasi BPTP/BRMP Kementerian Pertanian.",
+      "Ruang 'RUANG FOTO/ILUSTRASI' dapat dilengkapi foto dokumentasi lapangan Kalbar.",
+      "Bahan aktif bersifat acuan; gunakan hanya produk terdaftar/berizin sesuai label."
+    ]
+  },
+  "entries": [
+    {
+      "no": 1,
+      "slug": "penggerek-batang-padi",
+      "kategori": "hama",
+      "nama": "Penggerek Batang Padi",
+      "nama_latin": "Scirpophaga incertulas, S. innotata, Chilo suppressalis, Sesamia inferens",
+      "gejala": "Dua gejala utama. SUNDEP: pada fase vegetatif, pucuk/anakan muda mati, layu, mengering, dan mudah dicabut. BELUK: pada fase generatif, malai muncul putih/hampa, kering, dan mudah dicabut; pada pangkalnya terlihat bekas gerekan larva.",
+      "pembeda": "Anakan/malai yang mati mudah dicabut dan pada pangkal batang ada lubang gerekan serta kotoran larva — berbeda dari kresek HDB (daun menggulung, tidak ada lubang) dan dari kerusakan orong-orong (batang terpotong dari luar di pangkal, dekat permukaan tanah).",
+      "penyebab": "Larva (ulat) lima spesies ngengat penggerek yang menggerek dan memakan bagian dalam batang sehingga aliran hara/asimilat terputus.",
+      "kondisi": "Cuaca panas dengan air tergenang; penanaman tidak serempak; sisa singgang/tunggul jerami sebagai sumber larva. Di lahan tadah hujan, populasi meningkat bila tanam tidak seragam sehingga selalu tersedia tanaman inang.",
+      "dampak": "Kehilangan hasil pada fase vegetatif relatif kecil (tanaman membentuk anakan baru), tetapi serangan pada fase generatif (beluk) langsung menurunkan jumlah gabah berisi.",
+      "identifikasi": "Amati kelompok telur di daun persemaian, kehadiran ngengat pada malam hari (perangkap lampu), serta anakan/malai mati yang mudah dicabut. Ambang: kerusakan >5 rumpun/petak, atau tangkap ngengat 4 hari setelah muncul ngengat.",
+      "tip": "Cabut uji beberapa anakan mati — bila putus mudah dan berlubang, itu penggerek; bila pangkal tergigit rata dari luar, curigai orong-orong.",
+      "pht": [
+        {
+          "urutan": 1,
+          "teks": "Tanam serempak dalam satu hamparan dan olah tanah/benamkan singgang untuk memutus daur hidup."
+        },
+        {
+          "urutan": 2,
+          "teks": "Ambil dan musnahkan kelompok telur di persemaian; pasang perangkap feromon seks atau lampu untuk menangkap ngengat massal."
+        },
+        {
+          "urutan": 3,
+          "teks": "Lestarikan musuh alami parasitoid telur: Trichogramma japonicum, Telenomus rowani, Tetrastichus schoenobii."
+        },
+        {
+          "urutan": 4,
+          "teks": "Bersihkan singgang dan gulma inang di sekitar petak; atur pola tanam antar-hamparan agar tidak selalu ada tanaman muda."
+        },
+        {
+          "urutan": 5,
+          "teks": "Bila ambang terlampaui: insektisida berbahan aktif klorantraniliprol, spinetoram, dimehipo, atau karbofuran 20 kg/ha (fase vegetatif); rotasi bahan aktif."
+        }
+      ],
+      "foto": {
+        "file": "penggerek.png",
+        "path": "assets/photos/penggerek.png",
+        "caption": "Gejala sundep (anakan mati, mudah dicabut) akibat penggerek batang.",
+        "saran_foto": null,
+        "ada_foto": true
+      },
+      "kata_kunci": [
+        "penggerek",
+        "batang",
+        "scirpophaga",
+        "incertulas",
+        "innotata",
+        "chilo",
+        "suppressalis",
+        "sesamia",
+        "inferens"
+      ]
+    },
+    {
+      "no": 2,
+      "slug": "wereng-batang-coklat-wbc",
+      "kategori": "hama",
+      "nama": "Wereng Batang Coklat (WBC)",
+      "nama_latin": "Nilaparvata lugens",
+      "gejala": "Tanaman menguning dari daun tua lalu mengering cepat seperti terbakar (hopperburn), sering melingkar/berkelompok dalam hamparan. Wereng berkerumun di pangkal batang dekat permukaan air.",
+      "pembeda": "Menguning 'terbakar' berkelompok disertai kerumunan serangga coklat di pangkal batang — berbeda dari keracunan besi (daun bawah bronzing merata satu hamparan tanpa serangga) dan tungro (daun jingga dari ujung, tanaman kerdil).",
+      "penyebab": "Nimfa dan imago WBC mengisap cairan pangkal batang; juga menularkan virus kerdil rumput (grassy stunt) dan kerdil hampa (ragged stunt).",
+      "kondisi": "Lembap dan panas, pemupukan N berlebihan, tanam varietas rentan, jarak tanam rapat, dan penggunaan insektisida keliru yang membunuh musuh alami (resurgensi).",
+      "dampak": "Puso pada populasi tinggi; kehilangan hasil luas dan hampir tiap musim; penularan penyakit virus kerdil.",
+      "identifikasi": "Buka rumpun, ketuk pangkal batang di atas air — wereng jatuh mengapung. Ambang: rata-rata 10 ekor/rumpun (<40 HST) atau 20 ekor/rumpun (>40 HST); atau >3 ekor/rumpun bila ada gejala.",
+      "tip": "Jangan menyemprot 'terjadwal'. Semprot hanya bila hitungan per rumpun melampaui ambang, agar musuh alami tetap bekerja dan wereng tidak resisten.",
+      "pht": [
+        {
+          "urutan": 1,
+          "teks": "Tanam varietas tahan WBC (mis. Inpari 33) dan lakukan tanam serempak; beri jeda bera/pergiliran tanaman non-padi."
+        },
+        {
+          "urutan": 2,
+          "teks": "Pemupukan N berimbang (pakai Bagan Warna Daun) dan jarak tanam tidak terlalu rapat (jajar legowo)."
+        },
+        {
+          "urutan": 3,
+          "teks": "Lestarikan musuh alami: laba-laba Lycosa pseudoannulata, kepik Cyrtorhinus lividipennis, kumbang Paederus; jamur Beauveria bassiana/Metarhizium."
+        },
+        {
+          "urutan": 4,
+          "teks": "Keringkan petak sebelum aplikasi; semprot mengenai pangkal batang saat embun hilang (pukul 08.00-11.00)."
+        },
+        {
+          "urutan": 5,
+          "teks": "Bila ambang terlampaui: triflumezopyrim, pimetrozin, atau dinotefuran (rotasi); hindari bahan aktif yang memicu resurgensi."
+        }
+      ],
+      "foto": {
+        "file": "wbc.png",
+        "path": "assets/photos/wbc.png",
+        "caption": "Koloni wereng batang coklat berkerumun pada pangkal batang padi.",
+        "saran_foto": null,
+        "ada_foto": true
+      },
+      "kata_kunci": [
+        "wereng",
+        "batang",
+        "coklat",
+        "wbc",
+        "nilaparvata",
+        "lugens"
+      ]
+    },
+    {
+      "no": 3,
+      "slug": "wereng-hijau",
+      "kategori": "hama",
+      "nama": "Wereng Hijau",
+      "nama_latin": "Nephotettix virescens",
+      "gejala": "Sendiri jarang menimbulkan kerusakan mencolok, tetapi menghisap daun tanaman muda. Perannya paling penting sebagai penular (vektor) penyakit tungro — gejala tungro (daun jingga, kerdil) menyusul.",
+      "pembeda": "Serangga hijau kecil (2,5-3 mm) berujung sayap kehitaman, lincah meloncat; kehadirannya pada pertanaman muda menjadi tanda bahaya tungro, berbeda dari WBC yang coklat dan berkerumun di pangkal batang.",
+      "penyebab": "Nephotettix virescens (terutama) mengisap cairan daun dan memindahkan Rice Tungro Bacilliform Virus (RTBV) + Rice Tungro Spherical Virus (RTSV).",
+      "kondisi": "Pertanaman tidak serempak (selalu ada tanaman muda), sumber inokulum tungro tersedia, dan pemupukan N berlebih yang membuat tanaman lunak/menarik wereng.",
+      "dampak": "Kerusakan langsung ringan; kerugian utama melalui penularan tungro yang bisa menurunkan hasil 20-90% tergantung umur saat terinfeksi.",
+      "identifikasi": "Gunakan perangkap lampu atau ayunan jaring di persemaian dan pertanaman muda; pantau puncak populasi 1,5-2 bulan setelah puncak curah hujan.",
+      "tip": "Wereng hijau adalah 'alarm tungro'. Bila ditemukan banyak di sawah muda yang bertetangga dengan petak bergejala jingga, segera eradikasi tanaman sakit.",
+      "pht": [
+        {
+          "urutan": 1,
+          "teks": "Tanam serempak dan atur waktu tanam agar tanaman berumur >45 HST saat puncak populasi wereng hijau."
+        },
+        {
+          "urutan": 2,
+          "teks": "Tanam varietas tahan tungro/wereng hijau; cabut dan benamkan tanaman bergejala tungro (eradikasi sumber inokulum)."
+        },
+        {
+          "urutan": 3,
+          "teks": "Pemupukan N sesuai anjuran (BWD); jangan keringkan sawah total agar wereng tidak aktif berpindah."
+        },
+        {
+          "urutan": 4,
+          "teks": "Lestarikan musuh alami (laba-laba, kepik Cyrtorhinus); gunakan insektisida hanya bila populasi tinggi pada fase rentan."
+        }
+      ],
+      "foto": {
+        "file": null,
+        "path": null,
+        "caption": null,
+        "saran_foto": "Imago wereng hijau (hijau, ujung sayap kehitaman) di helai daun padi muda, close-up.",
+        "ada_foto": false
+      },
+      "kata_kunci": [
+        "wereng",
+        "hijau",
+        "nephotettix",
+        "virescens"
+      ]
+    },
+    {
+      "no": 4,
+      "slug": "tikus-sawah",
+      "kategori": "hama",
+      "nama": "Tikus Sawah",
+      "nama_latin": "Rattus argentiventer",
+      "gejala": "Tanaman terpotong rapi menyerong pada batang, sering dari tengah petak meluas ke tepi; potongan anakan/malai berserakan. Ada jejak jalur, kotoran, dan lubang aktif di pematang/tanggul.",
+      "pembeda": "Potongan batang bersudut khas gigitan dan kerusakan berpola (dari dalam ke luar petak) — berbeda dari orong-orong (potong di pangkal dekat tanah) dan penggerek (anakan mati berlubang, tidak terpotong lepas).",
+      "penyebab": "Tikus sawah yang berkembang biak cepat; habitat utama di tanggul irigasi, semak, dan pematang besar.",
+      "kondisi": "Banyak semak dan lahan bera di sekitar sawah, pematang lebar/tinggi sebagai sarang, tanam tidak serempak yang menyediakan pakan generatif terus-menerus. Umum di petak tadah hujan yang berbatasan semak, kebun, dan hutan.",
+      "dampak": "Salah satu penyebab kerusakan terbesar; menyerang sejak persemaian sampai menjelang panen, dapat menyebabkan puso setempat.",
+      "identifikasi": "Hitung rumpun rusak dan lubang aktif. Ambang tindakan: >10% rumpun rusak atau ditemukan tanda serangan aktif; pengendalian dimulai dini (pra-tanam).",
+      "tip": "Tikus dikendalikan sebelum, bukan sesudah, populasi meledak. Pra-tanam serentak satu hamparan jauh lebih murah daripada mengumpan saat generatif.",
+      "pht": [
+        {
+          "urutan": 1,
+          "teks": "Gerakan bersama (berkelompok, hamparan) sejak pra-tanam: sanitasi semak, gropyokan, penggenangan lubang, dan perataan pematang (<30 cm)."
+        },
+        {
+          "urutan": 2,
+          "teks": "Pasang Trap Barrier System (TBS)/Linear TBS dengan pagar plastik dan bubu perangkap; efektif untuk migrasi dari habitat semak/kebun."
+        },
+        {
+          "urutan": 3,
+          "teks": "Fumigasi/pengemposan belerang pada sarang aktif terutama saat fase generatif; tutup lubang dengan lumpur."
+        },
+        {
+          "urutan": 4,
+          "teks": "Lindungi/manfaatkan predator alami: burung hantu (Tyto alba) dengan rumah burung (rubuha), ular sawah, kucing."
+        },
+        {
+          "urutan": 5,
+          "teks": "Umpan rodentisida (antikoagulan) dicampur gabah hanya bila populasi tinggi, diletakkan di jalur lintasan tikus."
+        }
+      ],
+      "foto": {
+        "file": "tikus_tbs.png",
+        "path": "assets/photos/tikus_tbs.png",
+        "caption": "Sistem bubu perangkap (TBS/LTBS) dengan pagar plastik dan tanaman perangkap.",
+        "saran_foto": null,
+        "ada_foto": true
+      },
+      "kata_kunci": [
+        "tikus",
+        "sawah",
+        "rattus",
+        "argentiventer"
+      ]
+    },
+    {
+      "no": 5,
+      "slug": "keong-mas",
+      "kategori": "hama",
+      "nama": "Keong Mas",
+      "nama_latin": "Pomacea canaliculata",
+      "gejala": "Bibit muda habis dimakan; daun dan batang muda terpotong terlihat mengambang. Kelompok telur merah muda menempel pada batang, ajir, dan tepi petak di atas permukaan air.",
+      "pembeda": "Kerusakan pada 10-21 hari pertama setelah tanam disertai telur merah muda dan keong bercangkang kuning keemasan — sangat khas, tidak mirip hama lain.",
+      "penyebab": "Keong mas memarut dan memakan jaringan tanaman muda; herbivora rakus (polifag).",
+      "kondisi": "Air menggenang/diam, lahan tidak rata, dan saluran tidak terkendali. Petak tadah hujan dataran rendah yang tergenang air hujan di awal musim serta saluran/rawa di sekitarnya menjadi tempat keong berkembang.",
+      "dampak": "Bibit hilang sehingga tanaman jarang/rumpang; pada serangan parah harus tanam ulang. Kritis pada 10 HST (tanam pindah) dan sampai 21 HST (tabela).",
+      "identifikasi": "Amati keong dan telur merah muda saat pengolahan lahan dan awal tanam; pantau titik-titik air tergenang. Ambang: >3 ekor/rumpun atau >5% tanaman terserang.",
+      "tip": "Buat parit kecil keliling petak — keong akan berkumpul di parit saat air surut sehingga sekali jalan bisa dipungut banyak.",
+      "pht": [
+        {
+          "urutan": 1,
+          "teks": "Ratakan lahan dan kelola air: buat caren/saluran kecil agar keong terkumpul, lalu keringkan petak sampai fase anakan."
+        },
+        {
+          "urutan": 2,
+          "teks": "Pungut keong dan hancurkan telur pagi/sore; pasang ajir bambu sebagai tempat bertelur agar mudah diambil."
+        },
+        {
+          "urutan": 3,
+          "teks": "Pasang saringan kawat/bambu di pintu masuk-keluar air untuk mencegah keong masuk."
+        },
+        {
+          "urutan": 4,
+          "teks": "Gunakan umpan daun menarik (pepaya, talas, pisang) di tepi petak; gembalakan itik pada persiapan lahan/akhir."
+        },
+        {
+          "urutan": 5,
+          "teks": "Bila perlu: moluskisida saponin/rerak (nabati) atau berbahan aktif niklosamida; pilih yang berdaya racun rendah bagi ikan."
+        }
+      ],
+      "foto": {
+        "file": "keong.png",
+        "path": "assets/photos/keong.png",
+        "caption": "Kelompok telur keong mas berwarna merah muda menempel pada batang di atas air.",
+        "saran_foto": null,
+        "ada_foto": true
+      },
+      "kata_kunci": [
+        "keong",
+        "mas",
+        "pomacea",
+        "canaliculata"
+      ]
+    },
+    {
+      "no": 6,
+      "slug": "walang-sangit",
+      "kategori": "hama",
+      "nama": "Walang Sangit",
+      "nama_latin": "Leptocorisa oratorius",
+      "gejala": "Bulir pada fase masak susu terhisap sehingga gabah menjadi hampa, berbintik coklat, beras berubah warna dan mengapur. Tercium bau menyengat khas saat berada di pertanaman.",
+      "pembeda": "Bau menyengat + serangga langsing hijau kecoklatan pada malai; gabah hampa/bernoda pada fase pengisian — berbeda dari beluk penggerek (seluruh malai putih dan mudah dicabut).",
+      "penyebab": "Nimfa dan imago walang sangit mengisap cairan bulir yang sedang mengisi.",
+      "kondisi": "Hampir selalu ada tiap musim; meningkat bila banyak gulma berbunga di sekitar sawah dan tanam tidak seragam. Berlimpah pada pertanaman berbunga yang tidak serempak, umum di lahan tadah hujan yang berdekatan semak.",
+      "dampak": "Menurunkan bobot dan mutu gabah (hampa, mengapur, berubah warna) pada fase berbunga sampai matang susu.",
+      "identifikasi": "Ayun jaring pada pagi/sore saat fase berbunga-masak susu; hitung ekor per ayunan/rumpun.",
+      "tip": "Pasang umpan bangkai di beberapa titik tepi petak menjelang pembungaan — walang sangit berkumpul di umpan dan lebih mudah dikendalikan.",
+      "pht": [
+        {
+          "urutan": 1,
+          "teks": "Kendalikan gulma di sawah dan sekitarnya; tanam dan panen serempak agar fase pengisian tidak berkepanjangan."
+        },
+        {
+          "urutan": 2,
+          "teks": "Pupuk merata agar tanaman masak seragam sehingga masa rentan singkat."
+        },
+        {
+          "urutan": 3,
+          "teks": "Umpan bangkai (ikan/keong busuk, kotoran ayam) untuk mengumpulkan lalu memusnahkan; tangkap dengan jaring sebelum pembungaan."
+        },
+        {
+          "urutan": 4,
+          "teks": "Bila ambang terlampaui: insektisida kontak berbahan aktif BPMC, MIPC, propoksur, atau fipronil, disemprot pagi/sore."
+        }
+      ],
+      "foto": {
+        "file": "walangsangit.png",
+        "path": "assets/photos/walangsangit.png",
+        "caption": "Walang sangit dewasa (langsing, hijau kecoklatan) pada malai padi.",
+        "saran_foto": null,
+        "ada_foto": true
+      },
+      "kata_kunci": [
+        "walang",
+        "sangit",
+        "leptocorisa",
+        "oratorius"
+      ]
+    },
+    {
+      "no": 7,
+      "slug": "orong-orong-anjing-tanah",
+      "kategori": "hama",
+      "nama": "Orong-orong (Anjing Tanah)",
+      "nama_latin": "Gryllotalpa orientalis",
+      "gejala": "Tanaman terpotong pada pangkal batang dekat/di bawah permukaan tanah; akar muda dan pangkal rusak. Sering muncul saat lahan tidak tergenang.",
+      "pembeda": "Potongan tepat di pangkal batang dekat tanah dan kerusakan akar bawah tanah — mudah dikira sundep penggerek, tetapi orong-orong memotong dari luar dan meninggalkan liang di tanah.",
+      "penyebab": "Orong-orong (jangkrik penggali) yang aktif di tanah lembap tanpa genangan.",
+      "kondisi": "Sawah tadah hujan dan lahan kering yang tanahnya gembur/lembap tanpa genangan — kondisi yang sering terjadi di lahan tadah hujan sehingga orong-orong cukup umum. Penggenangan membuat orong-orong pindah ke pematang.",
+      "dampak": "Merusak tanaman pada semua fase, terutama merusak bibit dan pangkal tanaman muda sehingga rumpang.",
+      "identifikasi": "Amati liang di tanah dan tanaman rebah terpotong di pangkal, terutama di petak yang mengering.",
+      "tip": "Jaga genangan tipis pada fase awal bila air tersedia — orong-orong tidak menyukai petak yang tergenang dan akan pindah ke pematang.",
+      "pht": [
+        {
+          "urutan": 1,
+          "teks": "Olah tanah untuk membunuh telur dan nimfa; genangi sawah 3-4 hari (bila air tersedia) untuk menekan telur di tanah."
+        },
+        {
+          "urutan": 2,
+          "teks": "Ambil orong-orong secara mekanis saat pengolahan tanah (yang muncul berenang)."
+        },
+        {
+          "urutan": 3,
+          "teks": "Gunakan umpan sekam dicampur insektisida di titik serangan; bila perlu bahan aktif karbofuran atau fipronil."
+        }
+      ],
+      "foto": {
+        "file": "orongorong.png",
+        "path": "assets/photos/orongorong.png",
+        "caption": "Orong-orong (anjing tanah) dan pangkal tanaman yang terpotong.",
+        "saran_foto": null,
+        "ada_foto": true
+      },
+      "kata_kunci": [
+        "orong",
+        "anjing",
+        "tanah",
+        "gryllotalpa",
+        "orientalis"
+      ]
+    },
+    {
+      "no": 8,
+      "slug": "hama-putih-palsu-pelipat-daun",
+      "kategori": "hama",
+      "nama": "Hama Putih Palsu (Pelipat Daun)",
+      "nama_latin": "Cnaphalocrocis medinalis",
+      "gejala": "Daun terlipat/tergulung memanjang; di dalam gulungan ada larva yang memakan jaringan hijau sehingga terbentuk garis-garis putih transparan sepanjang 15-20 cm.",
+      "pembeda": "Daun tergulung dengan 'jendela' putih transparan (epidermis tersisa) — berbeda dari hama putih (Nymphula) yang membuat garis putih tanpa menggulung rapat, dan dari kresek HDB (menggulung layu tanpa jendela putih).",
+      "penyebab": "Larva ngengat pelipat daun yang melipat daun sebagai tempat berlindung sambil mengerok jaringan daun.",
+      "kondisi": "Kelembapan tinggi, pemupukan N berlebih, dan tajuk rapat pada fase vegetatif-sebelum berbunga.",
+      "dampak": "Umumnya ringan; menjadi berarti bila kerusakan daun mencapai ~50% atau daun bendera ikut rusak pada fase pengisian.",
+      "identifikasi": "Hitung persentase daun terlipat/terserang per rumpun contoh; perhatikan daun bendera. Kendalikan bila kerusakan tinggi/mengancam daun bendera.",
+      "tip": "Lindungi daun bendera. Kerusakan daun bawah jarang menurunkan hasil; yang menentukan adalah daun bendera dan tiga daun teratas.",
+      "pht": [
+        {
+          "urutan": 1,
+          "teks": "Pemupukan N berimbang dan jarak tanam tidak terlalu rapat agar tajuk tidak lembap."
+        },
+        {
+          "urutan": 2,
+          "teks": "Lestarikan parasitoid larva dan laba-laba predator; hindari penyemprotan dini yang tidak perlu."
+        },
+        {
+          "urutan": 3,
+          "teks": "Buang/rendam daun terlipat pada serangan terbatas; insektisida hanya bila kerusakan daun tinggi atau mengancam daun bendera."
+        }
+      ],
+      "foto": {
+        "file": null,
+        "path": null,
+        "caption": null,
+        "saran_foto": "Daun padi tergulung/terlipat memanjang dengan garis putih transparan; larva di dalam gulungan.",
+        "ada_foto": false
+      },
+      "kata_kunci": [
+        "hama",
+        "putih",
+        "palsu",
+        "pelipat",
+        "cnaphalocrocis",
+        "medinalis"
+      ]
+    },
+    {
+      "no": 9,
+      "slug": "ganjur",
+      "kategori": "hama",
+      "nama": "Ganjur",
+      "nama_latin": "Orseolia oryzae",
+      "gejala": "Anakan yang terserang membentuk tabung menyerupai daun bawang (silver shoot / 'pentil bawang') berwarna keputihan; anakan tidak menghasilkan malai.",
+      "pembeda": "Pembentukan tabung/pentil khas pada pucuk anakan — sangat berbeda dari gejala penggerek (anakan mati) maupun penyakit; tabung ini adalah puru akibat larva ganjur.",
+      "penyebab": "Larva lalat ganjur yang merangsang pucuk anakan membentuk puru berbentuk tabung sehingga titik tumbuh gagal bermalai.",
+      "kondisi": "Kelembapan tinggi, banyak embun, cuaca mendung berkepanjangan, tanam tidak serempak, dan pertanaman padi terus-menerus. Muncul terutama pada awal musim hujan yang lembap.",
+      "dampak": "Anakan terserang tidak produktif; bila banyak, jumlah malai per rumpun turun sehingga hasil berkurang.",
+      "identifikasi": "Hitung jumlah anakan bertabung 'pentil bawang' per rumpun pada fase anakan; pantau pada musim/lokasi berembun tinggi.",
+      "tip": "Kenali 'pentil bawang' sejak fase anakan — anakan bertabung tidak akan bermalai, jadi keputusan tindakan diambil sebelum fase generatif.",
+      "pht": [
+        {
+          "urutan": 1,
+          "teks": "Tanam serempak dan gunakan varietas tahan ganjur bila tersedia; olah/benamkan singgang sumber serangga."
+        },
+        {
+          "urutan": 2,
+          "teks": "Pemupukan N berimbang; hindari kelebihan N yang memicu anakan lunak."
+        },
+        {
+          "urutan": 3,
+          "teks": "Lestarikan parasitoid ganjur (Platygaster, Neanastatus); insektisida sistemik hanya bila serangan tinggi pada fase anakan."
+        }
+      ],
+      "foto": {
+        "file": null,
+        "path": null,
+        "caption": null,
+        "saran_foto": "Anakan padi membentuk 'pentil bawang'/tabung perak (silver shoot) akibat ganjur.",
+        "ada_foto": false
+      },
+      "kata_kunci": [
+        "ganjur",
+        "orseolia",
+        "oryzae"
+      ]
+    },
+    {
+      "no": 10,
+      "slug": "belalang-ulat-grayak",
+      "kategori": "hama",
+      "nama": "Belalang & Ulat Grayak",
+      "nama_latin": "Oxya spp., Spodoptera mauritia",
+      "gejala": "Daun terkoyak, berlubang, atau habis dimakan dari tepi/ujung; pada serangan ulat grayak (armyworm) daun ludes berkelompok, sering pada malam hari, dan larva bersembunyi di pangkal/tanah pada siang hari.",
+      "pembeda": "Daun robek/berlubang dengan sisa gigitan kasar dan ada serangga pemakan daun (belalang meloncat, ulat grayak berbaris) — berbeda dari hama putih palsu (daun tergulung dengan jendela putih) dan defisiensi hara (tanpa bekas gigitan).",
+      "penyebab": "Belalang (Oxya spp.) dan larva ngengat ulat grayak (Spodoptera mauritia) yang memakan jaringan daun.",
+      "kondisi": "Umum pada lahan tadah hujan/kering yang berbatasan gulma, semak, dan lahan bera; ulat grayak sering meledak setelah kekeringan diikuti hujan pertama. Populasi naik pada persemaian dan tanaman muda.",
+      "dampak": "Merusak daun pada persemaian sampai fase vegetatif; pada ledakan ulat grayak dapat menggunduli persemaian dalam semalam.",
+      "identifikasi": "Amati daun terkoyak dan kotoran ulat pada pagi hari; periksa pangkal tanaman/tanah untuk larva yang bersembunyi. Waspadai persemaian setelah hujan pertama musim.",
+      "tip": "Ulat grayak menyerang malam dan sembunyi siang hari — periksa pangkal tanaman dan tanah pada pagi buta untuk memastikan penyebab daun habis.",
+      "pht": [
+        {
+          "urutan": 1,
+          "teks": "Sanitasi gulma dan sisa tanaman di sekitar persemaian; olah tanah untuk mengurangi pupa di tanah."
+        },
+        {
+          "urutan": 2,
+          "teks": "Pantau persemaian dan tanaman muda; kumpulkan larva/belalang secara manual dan gembalakan itik/ayam pada serangan awal."
+        },
+        {
+          "urutan": 3,
+          "teks": "Lestarikan musuh alami (laba-laba, kepik, burung, parasitoid); pasang perangkap lampu untuk ngengat ulat grayak."
+        },
+        {
+          "urutan": 4,
+          "teks": "Bila serangan tinggi terutama di persemaian: insektisida berbahan aktif klorantraniliprol, emamektin benzoat, atau sesuai anjuran, disemprot sore hari."
+        }
+      ],
+      "foto": {
+        "file": null,
+        "path": null,
+        "caption": null,
+        "saran_foto": "Daun padi terkoyak/berlubang dari tepi oleh belalang; atau ulat grayak berkelompok memakan daun pada malam hari.",
+        "ada_foto": false
+      },
+      "kata_kunci": [
+        "belalang",
+        "ulat",
+        "grayak",
+        "oxya",
+        "spodoptera",
+        "mauritia"
+      ]
+    },
+    {
+      "no": 11,
+      "slug": "burung-pipit",
+      "kategori": "hama",
+      "nama": "Burung Pipit",
+      "nama_latin": "Lonchura spp.",
+      "gejala": "Bulir dimakan sehingga gabah kosong/hampa dan malai rusak; serangan bergerombol pada pagi (06.00-10.00) dan sore (15.00-18.00) menjelang panen.",
+      "pembeda": "Kerusakan pada malai matang menjelang panen oleh kawanan burung — berbeda dari walang sangit (gabah bernoda pada masak susu, ada bau) dan beluk penggerek.",
+      "penyebab": "Burung pipit pemakan biji yang menyerang saat pengisian-pematangan bulir (umumnya 70-80 HST).",
+      "kondisi": "Petak dekat semak/pohon tempat bertengger, tanam tidak serempak (ada petak matang lebih dulu menjadi sasaran), dan hamparan kecil terisolasi. Umum di lahan tadah hujan yang berbatasan kebun dan hutan.",
+      "dampak": "Kehilangan hasil bisa besar (dilaporkan hingga 50%) pada petak yang matang lebih awal atau terisolasi.",
+      "identifikasi": "Amati kehadiran kawanan pada jam rawan dan malai rusak/rontok di tepi petak yang berbatasan semak.",
+      "tip": "Petak yang matang sendirian jadi sasaran empuk. Keseragaman tanam satu hamparan adalah 'pengendalian burung' yang paling murah.",
+      "pht": [
+        {
+          "urutan": 1,
+          "teks": "Tanam serempak satu hamparan agar tekanan burung terbagi rata (tidak terfokus pada satu petak matang)."
+        },
+        {
+          "urutan": 2,
+          "teks": "Pasang jaring pelindung, tali berumbai/kaleng bunyi, dan orang-orangan; lakukan pengusiran pada jam rawan."
+        },
+        {
+          "urutan": 3,
+          "teks": "Kelola vegetasi bertengger di sekitar sawah; panen tepat waktu (80-85% bulir menguning) agar masa rawan singkat."
+        }
+      ],
+      "foto": {
+        "file": null,
+        "path": null,
+        "caption": null,
+        "saran_foto": "Kawanan burung pipit menyerang malai padi menjelang panen; bulir kosong/rontok.",
+        "ada_foto": false
+      },
+      "kata_kunci": [
+        "burung",
+        "pipit",
+        "lonchura"
+      ]
+    },
+    {
+      "no": 12,
+      "slug": "hawar-daun-bakteri-hdb-kresek",
+      "kategori": "penyakit",
+      "nama": "Hawar Daun Bakteri (HDB / Kresek)",
+      "nama_latin": "Xanthomonas oryzae pv. oryzae",
+      "gejala": "Dua bentuk. KRESEK (tanaman muda <30 hari): daun hijau kelabu, melipat, menggulung, layu, dan mati — mirip tanaman terserang penggerek. HAWAR (anakan-pemasakan): bercak abu-abu kekuningan dari tepi/ujung daun meluas membentuk hawar dan daun mengering.",
+      "pembeda": "Pada pagi hari yang lembap terlihat butiran/eksudat bakteri kuning keemasan pada tepi daun bergejala (bisa diuji dengan menempel/menggores) — pembeda kunci dari blas (bercak belah ketupat) dan hawar daun jingga (garis jingga).",
+      "penyebab": "Bakteri Xanthomonas oryzae pv. oryzae; menyebar lewat angin, gesekan antar-daun, air hujan/irigasi, dan luka pada bibit.",
+      "kondisi": "Musim hujan atau kemarau basah, lahan selalu tergenang, pemupukan N tinggi (>250 kg Urea/ha), jarak tanam rapat, dan ujung bibit terpotong saat tanam. Serangan sering meningkat pada awal musim hujan yang basah di lahan tadah hujan.",
+      "dampak": "Menurunkan hasil hingga ~30%; kresek pada tanaman muda dapat mematikan rumpun. Merupakan penyakit sasaran utama seleksi varietas PM-AAS.",
+      "identifikasi": "Cari eksudat bakteri kuning pada tepi daun pagi hari; amati pola hawar dari tepi/ujung. Ambang tindakan preventif: kelembapan tinggi + varietas rentan; semprot bila intensitas >5% daun / >20% pada varietas rentan.",
+      "tip": "Kresek sering dikira serangan penggerek. Bedakan: kresek membuat daun menggulung-layu tanpa lubang gerekan; penggerek membuat anakan mati yang mudah dicabut dan berlubang.",
+      "pht": [
+        {
+          "urutan": 1,
+          "teks": "Tanam varietas tahan HDB (mis. Inpari 32 HDB, Inpari 42 GSR, Mantap) — komponen kunci PM-AAS untuk lahan tadah hujan."
+        },
+        {
+          "urutan": 2,
+          "teks": "Jangan memotong ujung bibit saat tanam; jarak tanam jajar legowo agar tajuk tidak lembap."
+        },
+        {
+          "urutan": 3,
+          "teks": "Pengairan berselang/AWD bila air tersedia (hindari genangan terus-menerus); pemupukan N berimbang (BWD), tambah silika untuk memperkuat jaringan."
+        },
+        {
+          "urutan": 4,
+          "teks": "Sanitasi jerami dan gulma inang; agens hayati Pseudomonas fluorescens."
+        },
+        {
+          "urutan": 5,
+          "teks": "Bila intensitas tinggi: bakterisida berbahan aktif tembaga hidroksida/tembaga oksiklorida sesuai anjuran (bukan fungisida)."
+        }
+      ],
+      "foto": {
+        "file": "hdb.png",
+        "path": "assets/photos/hdb.png",
+        "caption": "Hawar pada tepi daun: bercak abu-abu kekuningan meluas dari tepi/ujung daun.",
+        "saran_foto": null,
+        "ada_foto": true
+      },
+      "kata_kunci": [
+        "hawar",
+        "bakteri",
+        "hdb",
+        "kresek",
+        "xanthomonas",
+        "oryzae"
+      ]
+    },
+    {
+      "no": 13,
+      "slug": "blas-blast",
+      "kategori": "penyakit",
+      "nama": "Blas (Blast)",
+      "nama_latin": "Pyricularia oryzae (Magnaporthe oryzae)",
+      "gejala": "BLAS DAUN: bercak belah ketupat (mata), ujung meruncing, pusat putih/abu-abu, tepi coklat. BLAS LEHER: pangkal leher malai membusuk coklat kehitaman sehingga malai patah/hampa (patah leher).",
+      "pembeda": "Bercak belah ketupat bermata pada daun sangat khas blas — berbeda dari bercak coklat (bercak oval/bulat sebesar biji wijen, merata) dan HDB (hawar dari tepi daun).",
+      "penyebab": "Cendawan Pyricularia oryzae (tahap sempurna Magnaporthe oryzae); menular lewat spora udara dan benih.",
+      "kondisi": "Kelembapan/embun tinggi, N berlebih, tanam rapat (tajuk lembap), suhu sejuk-lembap saat berbunga. Padi tadah hujan/gogo dan tanam rapat paling berisiko — blas adalah penyakit utama di lahan tadah hujan Kalbar.",
+      "dampak": "Kehilangan hasil besar (50-90%); blas leher sangat merugikan karena langsung mematikan pengisian malai.",
+      "identifikasi": "Cari bercak mata belah ketupat pada daun sejak fase anakan; periksa leher malai saat berbunga-pengisian. Ambang: >5-10% daun terserang atau ditemukan gejala pada malai.",
+      "tip": "Semprot pelindung blas leher dilakukan menjelang keluar malai, bukan setelah leher membusuk — sekali leher patah, kerusakan tidak dapat dipulihkan.",
+      "pht": [
+        {
+          "urutan": 1,
+          "teks": "Tanam varietas tahan blas dan bergilir antar-musim (ras cendawan cepat berubah); untuk tadah hujan utamakan varietas tahan blas seperti Inpari 39 Tadah Hujan (tahan 4 ras blas)."
+        },
+        {
+          "urutan": 2,
+          "teks": "Perlakuan benih dengan fungisida sistemik (mis. trisiklazol) karena blas terbawa benih."
+        },
+        {
+          "urutan": 3,
+          "teks": "Pupuk N sesuai anjuran (dosis N tinggi menaikkan serangan); tambahkan silika untuk memperkuat epidermis daun."
+        },
+        {
+          "urutan": 4,
+          "teks": "Atur waktu tanam agar pembungaan tidak bertepatan dengan periode banyak embun; jarak tanam tidak terlalu rapat."
+        },
+        {
+          "urutan": 5,
+          "teks": "Bila perlu: fungisida berbahan aktif trisiklazol, isoprotiolan, kasugamisin, atau azoksistrobin — semprot preventif saat awal berbunga (lindungi leher malai)."
+        }
+      ],
+      "foto": {
+        "file": "blas_daun.png",
+        "path": "assets/photos/blas_daun.png",
+        "caption": "Blas daun: bercak belah ketupat, pusat abu-abu/putih, tepi coklat.",
+        "saran_foto": null,
+        "ada_foto": true
+      },
+      "kata_kunci": [
+        "blas",
+        "blast",
+        "pyricularia",
+        "oryzae",
+        "magnaporthe"
+      ]
+    },
+    {
+      "no": 14,
+      "slug": "tungro",
+      "kategori": "penyakit",
+      "nama": "Tungro",
+      "nama_latin": "RTBV + RTSV (ditularkan wereng hijau)",
+      "gejala": "Daun berubah kuning sampai jingga dimulai dari ujung meluas ke pangkal; tanaman kerdil, anakan sedikit, malai pendek, dan banyak gabah hampa.",
+      "pembeda": "Perubahan warna jingga dari ujung daun + kekerdilan pada rumpun berkelompok (fokus) — berbeda dari keracunan besi (bronzing coklat daun bawah, satu hamparan merata) dan defisiensi N (menguning pucat merata tanpa kerdil mencolok).",
+      "penyebab": "Infeksi ganda Rice Tungro Bacilliform Virus (RTBV) dan Rice Tungro Spherical Virus (RTSV), ditularkan wereng hijau (Nephotettix virescens).",
+      "kondisi": "Tanam tidak serempak (sumber inokulum + tanaman muda selalu ada), populasi wereng hijau tinggi, dan varietas peka. Makin muda tanaman terinfeksi makin besar kerugian.",
+      "dampak": "Kehilangan hasil 20-90% tergantung umur saat terinfeksi; tanaman sakit tidak dapat disembuhkan.",
+      "identifikasi": "Amati kelompok tanaman kerdil menguning-jingga (pola fokus/menyebar dari satu titik) dan kehadiran wereng hijau; konfirmasi dengan pola warna dari ujung daun.",
+      "tip": "Tungro dikelola dengan 'putus rantai': serempak tanam + eradikasi tanaman sakit + kendalikan wereng hijau. Menyemprot tanaman yang sudah sakit tidak menyembuhkan.",
+      "pht": [
+        {
+          "urutan": 1,
+          "teks": "Tanam serempak satu hamparan dan atur waktu tanam agar tanaman >45 HST saat puncak wereng hijau."
+        },
+        {
+          "urutan": 2,
+          "teks": "Tanam varietas tahan tungro; segera eradikasi (cabut + benamkan) tanaman sakit untuk menghilangkan sumber inokulum."
+        },
+        {
+          "urutan": 3,
+          "teks": "Pemupukan N sesuai anjuran (BWD); jangan keringkan sawah total agar wereng tidak aktif menyebar."
+        },
+        {
+          "urutan": 4,
+          "teks": "Kendalikan vektor wereng hijau berdasarkan pemantauan (lihat entri Wereng Hijau), utamakan musuh alami."
+        }
+      ],
+      "foto": {
+        "file": "tungro.png",
+        "path": "assets/photos/tungro.png",
+        "caption": "Gejala tungro: daun menguning-jingga dari ujung, tanaman kerdil.",
+        "saran_foto": null,
+        "ada_foto": true
+      },
+      "kata_kunci": [
+        "tungro",
+        "rtbv",
+        "rtsv",
+        "ditularkan",
+        "wereng",
+        "hijau"
+      ]
+    },
+    {
+      "no": 15,
+      "slug": "bercak-coklat",
+      "kategori": "penyakit",
+      "nama": "Bercak Coklat",
+      "nama_latin": "Bipolaris oryzae (Helminthosporium oryzae)",
+      "gejala": "Bercak oval sampai bulat sebesar biji wijen, coklat dengan pusat kuning pucat/putih kotor, tersebar merata pada daun; juga pada pelepah dan kulit gabah (gabah bernoda).",
+      "pembeda": "Bercak kecil oval 'biji wijen' yang banyak dan merata — berbeda dari blas (belah ketupat bermata) dan HDB (hawar tepi daun). Sering menandakan lahan miskin hara (khususnya K) atau kekeringan.",
+      "penyebab": "Cendawan Bipolaris oryzae; patogen terbawa benih (seed borne).",
+      "kondisi": "Tanah kurang subur/kekurangan hara terutama Kalium (K) dan cekaman kekeringan — sangat relevan di lahan tadah hujan yang miskin hara (N, P, K rendah). Berkembang cepat pada tanaman lemah.",
+      "dampak": "Mematikan tanaman muda, menurunkan mutu dan bobot gabah; indikator lahan bermasalah hara/air.",
+      "identifikasi": "Cari bercak 'biji wijen' merata pada daun dan noda pada gabah; kaitkan dengan status hara/kekeringan petak.",
+      "tip": "Bercak coklat yang meluas sering 'gejala lapar hara' atau tanaman stres kering. Sebelum menyemprot, perbaiki Kalium, bahan organik, dan ketersediaan air.",
+      "pht": [
+        {
+          "urutan": 1,
+          "teks": "Perbaiki kesuburan: pemupukan berimbang terutama Kalium; ameliorasi bahan organik untuk lahan tadah hujan masam."
+        },
+        {
+          "urutan": 2,
+          "teks": "Gunakan benih sehat/perlakuan benih; tanam varietas tahan (mis. Ciherang)."
+        },
+        {
+          "urutan": 3,
+          "teks": "Jaga ketersediaan air pada fase kritis; jarak tanam jajar legowo (tidak rapat)."
+        },
+        {
+          "urutan": 4,
+          "teks": "Bila perlu: fungisida berbahan aktif mankozeb, azoksistrobin, difenokonazol, atau tebukonazol."
+        }
+      ],
+      "foto": {
+        "file": "bercak_coklat.png",
+        "path": "assets/photos/bercak_coklat.png",
+        "caption": "Bercak coklat oval sebesar biji wijen tersebar merata pada daun.",
+        "saran_foto": null,
+        "ada_foto": true
+      },
+      "kata_kunci": [
+        "bercak",
+        "coklat",
+        "bipolaris",
+        "oryzae",
+        "helminthosporium"
+      ]
+    },
+    {
+      "no": 16,
+      "slug": "hawar-pelepah-daun",
+      "kategori": "penyakit",
+      "nama": "Hawar Pelepah Daun",
+      "nama_latin": "Rhizoctonia solani",
+      "gejala": "Bercak pada pelepah dekat permukaan air, oval/elips 1-3 cm, pusat putih keabu-abuan bertepi coklat; meluas ke atas sampai daun bendera. Tampak sklerotia coklat kecil mudah lepas dan benang miselia putih.",
+      "pembeda": "Bercak mulai dari pelepah dekat air lalu naik + ada sklerotia coklat seperti butiran — khas hawar pelepah; perlu membuka kanopi untuk melihatnya.",
+      "penyebab": "Cendawan Rhizoctonia solani; bertahan sebagai sklerotia di tanah/sisa tanaman.",
+      "kondisi": "Tanam rapat, N berlebih, kanopi rapat lembap, dan pertanaman terus-menerus. Umum dari dataran rendah sampai tinggi.",
+      "dampak": "Tanaman mudah rebah, gabah tidak berisi penuh/hampa; kehilangan hasil hingga ~30%, terutama bila menyerang awal.",
+      "identifikasi": "Buka kanopi dan periksa pelepah dekat garis air untuk bercak oval bertepi coklat dan sklerotia; pantau sejak fase anakan.",
+      "tip": "Penyakit ini 'tersembunyi' di bawah kanopi. Pada varietas anakan lebat, buka rumpun rutin dekat permukaan air untuk deteksi dini.",
+      "pht": [
+        {
+          "urutan": 1,
+          "teks": "Jarak tanam tidak terlalu rapat (jajar legowo) dan pemupukan N berimbang untuk mengurangi kelembapan tajuk."
+        },
+        {
+          "urutan": 2,
+          "teks": "Pengairan berselang/AWD bila air tersedia; sanitasi sisa tanaman dan gulma inang untuk mengurangi sklerotia."
+        },
+        {
+          "urutan": 3,
+          "teks": "Agens hayati Trichoderma; bila perlu fungisida berbahan aktif validamisin, difenokonazol, mankozeb, atau benomil."
+        }
+      ],
+      "foto": {
+        "file": "hawar_pelepah.png",
+        "path": "assets/photos/hawar_pelepah.png",
+        "caption": "Bercak oval kelabu-hijau pada pelepah dekat permukaan air (hawar pelepah).",
+        "saran_foto": null,
+        "ada_foto": true
+      },
+      "kata_kunci": [
+        "hawar",
+        "pelepah",
+        "rhizoctonia",
+        "solani"
+      ]
+    },
+    {
+      "no": 17,
+      "slug": "hawar-daun-jingga-bacterial-red-stripe",
+      "kategori": "penyakit",
+      "nama": "Hawar Daun Jingga (Bacterial Red Stripe)",
+      "nama_latin": "Diduga Pseudomonas sp. / Bacillus sp.",
+      "gejala": "Diawali bercak kecil berwarna jingga di helai daun (bisa di mana saja), lalu berkembang menjadi hawar menyerupai HDB. Muncul terutama saat fase generatif.",
+      "pembeda": "Warna jingga pada bercak/garis daun yang khas — berbeda dari HDB (bercak abu-abu kekuningan dari tepi) dan tungro (jingga menyeluruh + kerdil).",
+      "penyebab": "Diduga bakteri Pseudomonas sp. dan Bacillus sp. (bacterial red stripe).",
+      "kondisi": "Dataran rendah (<100 m dpl), pertanaman selalu tergenang, N berlebih, dan jarak tanam rapat; sering pada fase generatif.",
+      "dampak": "Meningkatkan gabah hampa serupa kerugian akibat HDB.",
+      "identifikasi": "Cari garis/bercak jingga pada daun fase generatif; bedakan dari HDB lewat warna jingga dan dari tungro lewat tidak adanya kekerdilan menyeluruh.",
+      "tip": "Perbaikan N dan pengelolaan air biasanya cukup meredam hawar daun jingga — jarang perlu bakterisida bila kultur teknis benar.",
+      "pht": [
+        {
+          "urutan": 1,
+          "teks": "Pemupukan berimbang (kurangi kelebihan N) dan jarak tanam tidak terlalu rapat."
+        },
+        {
+          "urutan": 2,
+          "teks": "Pengairan berselang; hindari genangan terus-menerus."
+        },
+        {
+          "urutan": 3,
+          "teks": "Sanitasi dan gunakan benih/varietas sehat; tindakan kimia jarang diperlukan bila kultur teknis diperbaiki."
+        }
+      ],
+      "foto": {
+        "file": "hdj.png",
+        "path": "assets/photos/hdj.png",
+        "caption": "Garis/bercak jingga pada helai daun (hawar daun jingga).",
+        "saran_foto": null,
+        "ada_foto": true
+      },
+      "kata_kunci": [
+        "hawar",
+        "jingga",
+        "bacterial",
+        "red",
+        "stripe",
+        "diduga",
+        "pseudomonas",
+        "bacillus"
+      ]
+    },
+    {
+      "no": 18,
+      "slug": "kemasaman-tanah-keracunan-aluminium-al",
+      "kategori": "hara",
+      "nama": "Kemasaman Tanah & Keracunan Aluminium (Al)",
+      "nama_latin": "Al3+ berlebih, pH < 4,5",
+      "gejala": "Akar terhambat, pendek, tumpul, dan berwarna gelap sehingga penyerapan air/hara terganggu; tanaman kerdil, anakan sedikit, daun menua dini, sering disertai gejala kekurangan P. Pertumbuhan tidak merata dalam satu hamparan.",
+      "pembeda": "Masalah berpusat di akar (pendek/rusak) pada tanah mineral masam (pH<4,5) — berbeda dari keracunan besi (gejala pada daun berupa bronzing) dan gangguan biotik (tidak ada patogen/serangga).",
+      "penyebab": "Tanah mineral masam (ultisol/podzolik merah-kuning) yang mendominasi lahan tadah hujan Kalbar ber-pH rendah; pada pH<4,5 kelarutan Al3+ (dan Mn) melonjak dan meracuni ujung akar, sementara P terikat oleh Al/Fe.",
+      "kondisi": "Tanah ultisol/podzolik ber-pH rendah, kejenuhan Al tinggi, kandungan bahan organik dan basa (Ca, Mg, K) rendah; diperberat oleh pengapuran yang belum memadai dan pemupukan tidak berimbang. Khas lahan tadah hujan Sekadau, Sintang, dan sekitarnya.",
+      "dampak": "Akar rusak, serapan hara turun, pertumbuhan dan hasil merosot; memicu defisiensi P dan hara lain sekaligus.",
+      "identifikasi": "Ukur pH tanah (umumnya 4-5); amati akar pendek menghitam dan pertumbuhan kerdil pada petak bertanah merah-kuning. Uji tanah bila memungkinkan.",
+      "tip": "Pada tanah masam, menaikkan pH lebih dulu (kapur + bahan organik) membuat semua pupuk lain jauh lebih efektif — mengapur adalah investasi, bukan sekadar biaya.",
+      "pht": [
+        {
+          "urutan": 1,
+          "teks": "Ameliorasi: berikan kapur pertanian/dolomit sesuai pH dan kejenuhan Al (umumnya 1-2 ton/ha mengikuti uji tanah) untuk menaikkan pH dan menekan Al3+."
+        },
+        {
+          "urutan": 2,
+          "teks": "Tambahkan bahan organik (kompos jerami, pupuk kandang) yang mengikat Al serta memperbaiki kesuburan dan daya simpan air."
+        },
+        {
+          "urutan": 3,
+          "teks": "Tanam varietas adaptif tanah masam; berikan P (SP-36) untuk mengatasi pengikatan P oleh Al/Fe."
+        },
+        {
+          "urutan": 4,
+          "teks": "Pemupukan berimbang N-P-K sesuai status hara; letakkan pupuk P dekat perakaran agar efisien."
+        }
+      ],
+      "foto": {
+        "file": null,
+        "path": null,
+        "caption": null,
+        "saran_foto": "Akar padi pendek, tumpul, dan menghitam; tanaman kerdil dan tumbuh tidak merata pada petak bertanah merah-kuning masam.",
+        "ada_foto": false
+      },
+      "kata_kunci": [
+        "kemasaman",
+        "tanah",
+        "keracunan",
+        "aluminium",
+        "berlebih"
+      ]
+    },
+    {
+      "no": 19,
+      "slug": "cekaman-kekeringan-kekurangan-air",
+      "kategori": "hara",
+      "nama": "Cekaman Kekeringan (Kekurangan Air)",
+      "nama_latin": "Cekaman abiotik — defisit air",
+      "gejala": "Daun menggulung memanjang ke arah tulang daun, layu pada siang hari, ujung/tepi daun mengering; pertumbuhan terhambat, pembungaan tertunda, dan malai hampa bila kekeringan terjadi saat bunting-berbunga. Tanah retak-retak.",
+      "pembeda": "Daun menggulung dan tanah retak pada periode tanpa hujan; gejala paling parah di bagian petak yang paling kering, tanpa serangga/patogen — berbeda dari tungro (jingga+kerdil, fokus) dan keracunan besi (bronzing bintik oranye).",
+      "penyebab": "Ketersediaan air tidak cukup karena hujan berhenti atau tidak turun; lahan tadah hujan sepenuhnya bergantung curah hujan tanpa irigasi cadangan.",
+      "kondisi": "Musim kemarau atau jeda hujan panjang, tanah berdaya simpan air rendah (berpasir/porus), dan tanpa sumber irigasi. Paling merusak pada fase bunting-berbunga (fase paling peka terhadap air).",
+      "dampak": "Anakan berkurang, malai hampa, pengisian gabah terganggu, dan hasil turun drastis; pada kekeringan berat tanaman mati/puso setempat.",
+      "identifikasi": "Amati daun menggulung pada pagi/siang, tanah retak, dan warna daun memudar; catat fase tanaman saat kekeringan (kritis bila bunting-berbunga).",
+      "tip": "Di lahan tadah hujan, 'melawan kekeringan' dimulai dari kalender tanam dan varietas genjah — menanam tepat di awal hujan lebih menentukan daripada tindakan saat tanaman sudah kering.",
+      "pht": [
+        {
+          "urutan": 1,
+          "teks": "Sesuaikan waktu tanam dengan awal musim hujan (kalender tanam) agar fase bunting-berbunga tidak jatuh pada puncak kemarau."
+        },
+        {
+          "urutan": 2,
+          "teks": "Tanam varietas genjah dan toleran kekeringan (mis. Inpari 38/39/41 Tadah Hujan) agar cepat panen sebelum air habis."
+        },
+        {
+          "urutan": 3,
+          "teks": "Perbaiki simpanan air: tambah bahan organik, kuatkan pematang, dan bangun embung/dam parit untuk memanen air hujan."
+        },
+        {
+          "urutan": 4,
+          "teks": "Terapkan hemat air (mulsa jerami, tanam benih langsung/tabela) dan kendalikan gulma agar tidak bersaing air dengan padi."
+        }
+      ],
+      "foto": {
+        "file": null,
+        "path": null,
+        "caption": null,
+        "saran_foto": "Daun padi menggulung memanjang seperti bawang dan ujungnya mengering; tanah retak pecah-pecah di sela tanaman saat kemarau.",
+        "ada_foto": false
+      },
+      "kata_kunci": [
+        "cekaman",
+        "kekeringan",
+        "kekurangan",
+        "air",
+        "abiotik",
+        "defisit"
+      ]
+    },
+    {
+      "no": 20,
+      "slug": "defisiensi-nitrogen-n",
+      "kategori": "hara",
+      "nama": "Defisiensi Nitrogen (N)",
+      "nama_latin": "Kekurangan N",
+      "gejala": "Seluruh tanaman hijau pucat sampai kekuningan merata; daun tua menguning lebih dulu (dari ujung ke pangkal), anakan sedikit, tanaman pendek dan lambat tumbuh.",
+      "pembeda": "Menguning pucat merata mulai dari daun tua tanpa bercak/serangga — berbeda dari tungro (jingga + kerdil fokus), besi (bronzing bintik), dan K (nekrosis tepi daun tua).",
+      "penyebab": "Ketersediaan N rendah atau serapan tidak cukup; N mudah tercuci oleh hujan deras di lahan tadah hujan.",
+      "kondisi": "Lahan miskin hara (N rendah), pencucian N oleh hujan, waktu/dosis pemupukan tidak tepat, dan bahan organik mentah yang mengikat N sementara.",
+      "dampak": "Anakan dan luas daun kurang sehingga potensi hasil rendah; tetapi kelebihan N juga berbahaya (memicu WBC, HDB, blas).",
+      "identifikasi": "Gunakan Bagan Warna Daun (BWD) untuk menilai kebutuhan N secara objektif; amati warna pucat merata pada hamparan.",
+      "tip": "Gunakan Bagan Warna Daun sebelum menambah urea. N cukup bukan berarti N banyak: kelebihan N justru mengundang wereng, HDB, dan blas.",
+      "pht": [
+        {
+          "urutan": 1,
+          "teks": "Pemupukan N (urea) tepat dosis dan waktu berdasarkan Bagan Warna Daun (BWD), diberikan bertahap agar tidak tercuci."
+        },
+        {
+          "urutan": 2,
+          "teks": "Perbaiki bahan organik dan efisiensi pupuk; hindari pemberian N berlebihan sekaligus."
+        },
+        {
+          "urutan": 3,
+          "teks": "Sesuaikan dengan status lahan; berikan pupuk saat tanah lembap agar N tidak menguap/tercuci."
+        }
+      ],
+      "foto": {
+        "file": null,
+        "path": null,
+        "caption": null,
+        "saran_foto": "Tanaman pucat kekuningan merata, daun tua menguning lebih dulu, anakan sedikit, pertumbuhan lambat.",
+        "ada_foto": false
+      },
+      "kata_kunci": [
+        "defisiensi",
+        "nitrogen",
+        "kekurangan"
+      ]
+    },
+    {
+      "no": 21,
+      "slug": "defisiensi-fosfor-p",
+      "kategori": "hara",
+      "nama": "Defisiensi Fosfor (P)",
+      "nama_latin": "Kekurangan P (terikat Al/Fe)",
+      "gejala": "Tanaman kerdil dengan anakan sedikit; daun sempit, tegak, hijau tua kebiruan, kadang keunguan pada tepi/pangkal daun tua. Pematangan dan pengisian terlambat.",
+      "pembeda": "Hijau tua-kebiruan dan anakan sangat sedikit (bukan menguning) — berbeda dari defisiensi N (menguning pucat). Umum di lahan tadah hujan masam karena P terikat Al/Fe.",
+      "penyebab": "Ketersediaan P rendah karena diikat aluminium/besi menjadi Al-fosfat/Fe-fosfat pada tanah mineral masam (ultisol).",
+      "kondisi": "Tanah ultisol/podzolik ber-pH rendah dengan Al/Fe tinggi; lahan tadah hujan yang memang miskin P.",
+      "dampak": "Anakan dan malai sedikit sehingga potensi hasil rendah; tanaman lambat matang.",
+      "identifikasi": "Amati kekerdilan + warna hijau tua kebiruan/keunguan pada hamparan; kaitkan dengan pH masam. Uji tanah bila memungkinkan.",
+      "tip": "Menambah P saja kurang efektif bila tanah sangat masam. Naikkan pH dulu (kapur + bahan organik) agar P yang diberikan tidak langsung terikat Al/Fe.",
+      "pht": [
+        {
+          "urutan": 1,
+          "teks": "Berikan pupuk P (SP-36) sesuai status P tanah (rendah 100, sedang 75, tinggi 50 kg/ha — acuan PM-AAS)."
+        },
+        {
+          "urutan": 2,
+          "teks": "Naikkan pH dengan kapur/dolomit dan bahan organik agar P tidak terikat Al/Fe (meningkatkan ketersediaan P)."
+        },
+        {
+          "urutan": 3,
+          "teks": "Gunakan pupuk organik/kompos untuk memperbaiki efisiensi P; letakkan pupuk P dekat perakaran."
+        }
+      ],
+      "foto": {
+        "file": null,
+        "path": null,
+        "caption": null,
+        "saran_foto": "Tanaman kerdil, daun hijau tua kebiruan, anakan sedikit; tepi daun tua keunguan.",
+        "ada_foto": false
+      },
+      "kata_kunci": [
+        "defisiensi",
+        "fosfor",
+        "kekurangan",
+        "terikat"
+      ]
+    },
+    {
+      "no": 22,
+      "slug": "defisiensi-kalium-k",
+      "kategori": "hara",
+      "nama": "Defisiensi Kalium (K)",
+      "nama_latin": "Kekurangan K",
+      "gejala": "Daun tua menguning lalu mengering-coklat dari ujung dan tepi (nekrosis tepi); sering muncul bercak coklat (rentan bercak coklat), batang lemah dan mudah rebah.",
+      "pembeda": "Gejala mulai dari daun tua/bawah pada tepi-ujung (bukan seluruh daun) dan tanaman rentan bercak coklat — berbeda dari N (menguning merata seluruh daun tua) dan besi (bronzing bintik oranye).",
+      "penyebab": "Ketersediaan K rendah, umum pada tanah masam tadah hujan yang miskin basa (K, Ca, Mg).",
+      "kondisi": "Tanah masam kejenuhan basa rendah, pengangkutan jerami keluar lahan (menguras K), dan pemupukan tidak berimbang.",
+      "dampak": "Batang lemah, mudah rebah, gabah kurang berisi, dan meningkatnya penyakit bercak coklat; mutu dan hasil turun.",
+      "identifikasi": "Amati nekrosis tepi/ujung daun tua + kecenderungan rebah dan bercak coklat pada hamparan; kaitkan dengan riwayat pengangkutan jerami.",
+      "tip": "Jerami padi kaya Kalium dan silika. Mengembalikan jerami (terkompos) ke lahan adalah pupuk K termurah untuk lahan tadah hujan.",
+      "pht": [
+        {
+          "urutan": 1,
+          "teks": "Pupuk K (KCl/NPK) sesuai anjuran; kembalikan jerami ke lahan (dikomposkan in situ) sebagai sumber K dan silika."
+        },
+        {
+          "urutan": 2,
+          "teks": "Ameliorasi bahan organik dan kapur untuk menaikkan basa tanah."
+        },
+        {
+          "urutan": 3,
+          "teks": "Pupuk silika untuk memperkuat batang (prinsip PM-AAS) dan mengurangi rebah serta serangan penyakit."
+        }
+      ],
+      "foto": {
+        "file": null,
+        "path": null,
+        "caption": null,
+        "saran_foto": "Daun tua menguning-mengering dari ujung/tepi (nekrosis tepi), bercak coklat; batang lemah mudah rebah.",
+        "ada_foto": false
+      },
+      "kata_kunci": [
+        "defisiensi",
+        "kalium",
+        "kekurangan"
+      ]
+    },
+    {
+      "no": 23,
+      "slug": "defisiensi-zink-zn",
+      "kategori": "hara",
+      "nama": "Defisiensi Zink (Zn)",
+      "nama_latin": "Kekurangan Zn",
+      "gejala": "Muncul 2-4 minggu setelah tanam: bercak/karat coklat pada daun tengah-bawah, pangkal daun memucat/memutih, daun mengecil, tanaman kerdil dan pertumbuhan tersendat (kadang disebut 'khaira').",
+      "pembeda": "Karat coklat + pemutihan pangkal daun pada tanaman muda kerdil, sering berpetak (patchy) di area becek/berkapur — berbeda dari bercak coklat penyakit (bercak biji wijen menyebar) dan besi (bronzing dari ujung).",
+      "penyebab": "Ketersediaan Zn rendah, diperberat oleh genangan, pH tinggi setempat (bekas kapur berlebih), dan bahan organik tinggi yang mengikat Zn.",
+      "kondisi": "Tanah tergenang/becek terus-menerus, lahan baru, dan pengapuran berlebihan setempat.",
+      "dampak": "Pertumbuhan terhambat pada fase awal; bila berat, tanaman mati atau hasil turun banyak.",
+      "identifikasi": "Amati gejala 2-4 MST berupa karat coklat + pangkal daun memutih pada petak tertentu; respons cepat terhadap aplikasi Zn menguatkan diagnosis.",
+      "tip": "Defisiensi Zn muncul dini (2-4 MST) dan cepat pulih bila segera diberi Zn — kenali karat coklat + pangkal daun memutih agar tidak dikira penyakit.",
+      "pht": [
+        {
+          "urutan": 1,
+          "teks": "Aplikasi pupuk Zn (ZnSO4) melalui tanah atau semprot daun; celup akar bibit dalam larutan/pasta Zn sebelum tanam."
+        },
+        {
+          "urutan": 2,
+          "teks": "Perbaiki drainase agar tidak becek berkepanjangan untuk meningkatkan ketersediaan Zn."
+        },
+        {
+          "urutan": 3,
+          "teks": "Gunakan varietas adaptif dan pupuk berimbang; hindari pengapuran berlebihan setempat."
+        }
+      ],
+      "foto": {
+        "file": null,
+        "path": null,
+        "caption": null,
+        "saran_foto": "Bercak/karat coklat pada daun tengah, pangkal daun memutih, tanaman kerdil dan terlambat 2-4 minggu setelah tanam.",
+        "ada_foto": false
+      },
+      "kata_kunci": [
+        "defisiensi",
+        "zink",
+        "kekurangan"
+      ]
+    },
+    {
+      "no": 24,
+      "slug": "keracunan-besi-fe",
+      "kategori": "hara",
+      "nama": "Keracunan Besi (Fe)",
+      "nama_latin": "Bronzing — Fe2+ berlebih",
+      "gejala": "Bintik-bintik kecil coklat-oranye pada daun bawah mulai dari ujung; pada berat seluruh daun kuning kemerahan sampai coklat (bronzing). Pertumbuhan terhambat, anakan sedikit, akar berselaput/berlapis kemerahan-hitam.",
+      "pembeda": "Bronzing merata tanpa serangga dan tanpa pola fokus — berbeda dari WBC (ada serangga, hopperburn berkelompok) dan tungro (jingga + kerdil, pola fokus). Kunci: lihat film besi kemerahan di akar dan air.",
+      "penyebab": "Pada tanah masam yang tergenang, besi berubah menjadi bentuk terlarut (Fe2+) yang bila berlebihan terserap akar dan meracuni jaringan tanaman.",
+      "kondisi": "Terjadi pada petak tadah hujan dataran rendah/cekungan yang tergenang air hujan cukup lama dan bertanah masam; lebih jarang daripada di lahan pasang surut, tetapi bisa muncul di sawah tadah hujan rendah bukaan baru.",
+      "dampak": "Menghambat pertumbuhan dan pengisian, menurunkan hasil; pada berat menyebabkan puso setempat.",
+      "identifikasi": "Amati bronzing daun bawah + selaput besi di permukaan air/akar pada petak rendah; ukur pH tanah (biasanya masam). Bedakan dari penyakit dengan tidak adanya bercak patogen.",
+      "tip": "Keracunan besi di tadah hujan muncul di petak rendah yang tergenang lama — pengeringan berkala dan perbaikan drainase biasanya cukup meredamnya.",
+      "pht": [
+        {
+          "urutan": 1,
+          "teks": "Kelola air: keringkan petak secara berkala saat tergenang lama agar Fe2+ teroksidasi; perbaiki drainase petak cekungan."
+        },
+        {
+          "urutan": 2,
+          "teks": "Ameliorasi kapur/dolomit dan bahan organik terkompos untuk menaikkan pH dan menekan Fe2+."
+        },
+        {
+          "urutan": 3,
+          "teks": "Tanam varietas toleran; pemupukan berimbang (cukup P dan K) agar penyerapan Fe berlebih berkurang."
+        }
+      ],
+      "foto": {
+        "file": null,
+        "path": null,
+        "caption": null,
+        "saran_foto": "Daun bawah bronzing: bintik coklat-oranye dari ujung daun pada petak rendah tergenang; akar berlapis film kemerahan.",
+        "ada_foto": false
+      },
+      "kata_kunci": [
+        "keracunan",
+        "besi",
+        "bronzing",
+        "berlebih"
+      ]
+    }
+  ],
+  "tabel_identifikasi_cepat": [
+    {
+      "kategori": "hama",
+      "key": "bug",
+      "gejala_ringkas": "Anakan muda mati, mudah dicabut, batang berlubang",
+      "dugaan": "Penggerek batang",
+      "cara_cek": "Cari lubang & kotoran larva"
+    },
+    {
+      "kategori": "hama",
+      "key": "bug",
+      "gejala_ringkas": "Menguning 'terbakar' berkelompok + serangga coklat",
+      "dugaan": "Wereng batang coklat",
+      "cara_cek": "Ketuk pangkal batang di air"
+    },
+    {
+      "kategori": "hama",
+      "key": "bug",
+      "gejala_ringkas": "Daun kuning-jingga dari ujung + tanaman kerdil (fokus)",
+      "dugaan": "Tungro (vektor wereng hijau)",
+      "cara_cek": "Lihat pola fokus; cek wereng hijau"
+    },
+    {
+      "kategori": "hama",
+      "key": "bug",
+      "gejala_ringkas": "Bibit muda habis + telur merah muda di batang",
+      "dugaan": "Keong mas",
+      "cara_cek": "Cari keong & telur merah muda"
+    },
+    {
+      "kategori": "hama",
+      "key": "bug",
+      "gejala_ringkas": "Batang terpotong menyerong, kerusakan dari dalam petak",
+      "dugaan": "Tikus sawah",
+      "cara_cek": "Cari lubang aktif & jejak pematang"
+    },
+    {
+      "kategori": "hama",
+      "key": "bug",
+      "gejala_ringkas": "Batang terpotong di pangkal dekat tanah + ada liang",
+      "dugaan": "Orong-orong",
+      "cara_cek": "Amati petak mengering, cari liang"
+    },
+    {
+      "kategori": "hama",
+      "key": "bug",
+      "gejala_ringkas": "Gabah hampa/bernoda saat masak susu + bau menyengat",
+      "dugaan": "Walang sangit",
+      "cara_cek": "Ayun jaring pagi/sore"
+    },
+    {
+      "kategori": "hama",
+      "key": "bug",
+      "gejala_ringkas": "Daun tergulung, ada 'jendela' garis putih transparan",
+      "dugaan": "Hama putih palsu (pelipat daun)",
+      "cara_cek": "Buka gulungan daun, cari larva"
+    },
+    {
+      "kategori": "hama",
+      "key": "bug",
+      "gejala_ringkas": "Anakan membentuk tabung 'pentil bawang' keputihan",
+      "dugaan": "Ganjur",
+      "cara_cek": "Hitung anakan bertabung"
+    },
+    {
+      "kategori": "hama",
+      "key": "bug",
+      "gejala_ringkas": "Daun terkoyak/berlubang, daun habis dimakan",
+      "dugaan": "Belalang & ulat grayak",
+      "cara_cek": "Periksa pangkal & tanah pagi hari"
+    },
+    {
+      "kategori": "hama",
+      "key": "bug",
+      "gejala_ringkas": "Bulir dimakan kawanan burung menjelang panen",
+      "dugaan": "Burung pipit",
+      "cara_cek": "Amati jam 06-10 & 15-18"
+    },
+    {
+      "kategori": "penyakit",
+      "key": "microbe",
+      "gejala_ringkas": "Bercak abu-abu dari tepi daun; eksudat kuning pagi",
+      "dugaan": "Hawar daun bakteri (HDB)",
+      "cara_cek": "Cari butiran bakteri kuning"
+    },
+    {
+      "kategori": "penyakit",
+      "key": "microbe",
+      "gejala_ringkas": "Bercak belah ketupat bermata (pusat putih, tepi coklat)",
+      "dugaan": "Blas daun",
+      "cara_cek": "Periksa daun & leher malai"
+    },
+    {
+      "kategori": "penyakit",
+      "key": "microbe",
+      "gejala_ringkas": "Leher malai membusuk coklat, malai patah/hampa",
+      "dugaan": "Blas leher",
+      "cara_cek": "Amati pangkal leher malai"
+    },
+    {
+      "kategori": "penyakit",
+      "key": "microbe",
+      "gejala_ringkas": "Bercak kecil oval 'biji wijen' merata di daun",
+      "dugaan": "Bercak coklat",
+      "cara_cek": "Kaitkan status K, hara & air"
+    },
+    {
+      "kategori": "penyakit",
+      "key": "microbe",
+      "gejala_ringkas": "Bercak oval kelabu bertepi coklat di pelepah + sklerotia",
+      "dugaan": "Hawar pelepah",
+      "cara_cek": "Buka kanopi dekat garis air"
+    },
+    {
+      "kategori": "penyakit",
+      "key": "microbe",
+      "gejala_ringkas": "Garis/bercak jingga pada helai daun (generatif)",
+      "dugaan": "Hawar daun jingga",
+      "cara_cek": "Bedakan dari HDB lewat warna jingga"
+    },
+    {
+      "kategori": "hara",
+      "key": "water",
+      "gejala_ringkas": "Akar pendek/tumpul menghitam, kerdil, tanah masam merah-kuning",
+      "dugaan": "Keracunan Aluminium (Al)",
+      "cara_cek": "Ukur pH tanah (4-5)"
+    },
+    {
+      "kategori": "hara",
+      "key": "water",
+      "gejala_ringkas": "Daun menggulung, tanah retak, malai hampa saat kemarau",
+      "dugaan": "Cekaman kekeringan",
+      "cara_cek": "Catat fase tanaman & curah hujan"
+    },
+    {
+      "kategori": "hara",
+      "key": "water",
+      "gejala_ringkas": "Tanaman pucat kekuningan merata mulai daun tua",
+      "dugaan": "Defisiensi Nitrogen (N)",
+      "cara_cek": "Gunakan Bagan Warna Daun (BWD)"
+    },
+    {
+      "kategori": "hara",
+      "key": "water",
+      "gejala_ringkas": "Kerdil, daun hijau tua kebiruan/keunguan, anakan sedikit",
+      "dugaan": "Defisiensi Fosfor (P)",
+      "cara_cek": "Kaitkan pH masam; uji tanah"
+    },
+    {
+      "kategori": "hara",
+      "key": "water",
+      "gejala_ringkas": "Daun tua menguning-coklat dari tepi/ujung, mudah rebah",
+      "dugaan": "Defisiensi Kalium (K)",
+      "cara_cek": "Cek riwayat jerami diangkut"
+    },
+    {
+      "kategori": "hara",
+      "key": "water",
+      "gejala_ringkas": "Karat coklat + pangkal daun memutih, kerdil 2-4 MST",
+      "dugaan": "Defisiensi Zink (Zn)",
+      "cara_cek": "Uji respons aplikasi ZnSO4"
+    },
+    {
+      "kategori": "hara",
+      "key": "water",
+      "gejala_ringkas": "Daun bawah bronzing bintik oranye pada petak rendah tergenang",
+      "dugaan": "Keracunan besi (Fe)",
+      "cara_cek": "Ukur pH; lihat film besi di air"
+    }
+  ],
+  "referensi": [
+    {
+      "urutan": 1,
+      "teks": "Badan Perakitan dan Modernisasi Pertanian (BRMP), Kementerian Pertanian. 2026. Buku Saku PM-AAS (Pertanian Modern - Advanced Agricultural System). Jakarta."
+    },
+    {
+      "urutan": 2,
+      "teks": "Balai Besar Penelitian Tanaman Padi (BB Padi), Badan Litbang Pertanian. Varietas Unggul Baru Padi Inpari 38, 39, 41 Tadah Hujan Agritan untuk Lahan Sawah Tadah Hujan. Kementerian Pertanian."
+    },
+    {
+      "urutan": 3,
+      "teks": "Wijayanto, B., Kiswanto, dan G.O. Manurung. 2013. Hama dan Penyakit Utama Tanaman Padi. BPTP Lampung, Badan Litbang Pertanian, Kementerian Pertanian."
+    },
+    {
+      "urutan": 4,
+      "teks": "Jumadi, O. dan H. Karim (Ed.). Organisme Pengganggu Tanaman (OPT) dan Agens Hayati (AH) pada Tanaman Padi. Jurusan Biologi FMIPA Universitas Negeri Makassar."
+    },
+    {
+      "urutan": 5,
+      "teks": "Farizi, dkk. Evaluasi Kesesuaian Lahan Sawah Tadah Hujan untuk Tanaman Padi di Kecamatan Bonti, Kabupaten Sanggau, Kalimantan Barat. Pedontropika: Jurnal Ilmu Tanah dan Sumber Daya Lahan, Universitas Tanjungpura."
+    },
+    {
+      "urutan": 6,
+      "teks": "Balai Penelitian Tanah, Badan Litbang Pertanian. Pengelolaan Tanah Masam (Ultisol/Podzolik): Pengapuran, Bahan Organik, dan Pemupukan Berimbang. Kementerian Pertanian."
+    },
+    {
+      "urutan": 7,
+      "teks": "Direktorat Perlindungan Tanaman Pangan, Kementerian Pertanian. Pedoman Pengamatan dan Pengendalian OPT Padi (ambang pengendalian)."
+    },
+    {
+      "urutan": 8,
+      "teks": "Puslitbang Tanaman Pangan. Masalah Lapang Hama, Penyakit, dan Hara pada Padi. Badan Litbang Pertanian, Kementerian Pertanian."
+    },
+    {
+      "urutan": 9,
+      "teks": "International Rice Research Institute (IRRI). Rice Knowledge Bank - Pests, Diseases and Nutrient Disorders of Rice."
+    }
+  ],
+  "catatan_referensi": "Rekomendasi bahan aktif pestisida bersifat acuan; gunakan hanya produk yang terdaftar dan diizinkan Kementerian Pertanian, sesuai dosis pada label. Foto gejala bersumber dari publikasi BPTP/BRMP Kementerian Pertanian.",
+  "tips": [
+    "Bawa buku saku ini, kaca pembesar (loupe), kantong plastik/botol contoh, dan alat ukur pH tanah sederhana saat pengamatan.",
+    "Amati minimal 10 titik secara zig-zag per petak, sekali seminggu; catat jenis, jumlah, dan luas serangan sebelum memutuskan tindakan.",
+    "Bedakan dulu: gangguan hidup (hama/penyakit) atau tidak hidup (hara/air)? Gangguan hara/air biasanya merata satu hamparan tanpa serangga/patogen dan mengikuti pola tanah/kelembapan.",
+    "Di lahan tadah hujan, sesuaikan waktu tanam dengan awal musim hujan dan pilih varietas genjah agar fase berbunga tidak jatuh saat kekeringan.",
+    "Pada tanah masam (ultisol/podzolik), naikkan pH dengan kapur/dolomit + bahan organik sebelum menambah pupuk lain agar pupuk tidak terbuang.",
+    "Kembalikan jerami (dikomposkan in situ) ke lahan sebagai sumber Kalium dan silika — memperkuat batang dan menekan bercak coklat serta HDB.",
+    "Gunakan Bagan Warna Daun (BWD) untuk menakar N; kelebihan N mengundang wereng coklat, HDB, dan blas.",
+    "Utamakan tanam serempak satu hamparan — kunci menekan penggerek, tungro, tikus, dan burung sekaligus.",
+    "Pestisida adalah pilihan terakhir: patuhi ambang, prinsip 6 tepat (jenis, dosis, waktu, cara, sasaran, lokasi), rotasi bahan aktif, dan gunakan APD.",
+    "Lindungi musuh alami (laba-laba, kepik, parasitoid, burung hantu) — mereka bekerja gratis sepanjang musim bila tidak dibunuh insektisida."
+  ],
+  "varietas": {
+    "judul": "Varietas cocok untuk lahan tadah hujan (acuan PM-AAS 2026)",
+    "teks": "Pemilihan varietas adalah komponen PHT paling awal dan murah. Untuk lahan tadah hujan, utamakan varietas berumur genjah dan toleran kekeringan agar cepat panen sebelum air habis, serta tahan penyakit utama (blas dan HDB). Kementerian Pertanian melepas varietas khusus tadah hujan: Inpari 38, 39, dan 41 Tadah Hujan Agritan (genjah, agak toleran kekeringan; Inpari 39 tahan 4 ras blas) serta Inpari 46 GSR Tadah Hujan. Acuan PM-AAS 2026 juga merekomendasikan Padjadjaran, Inpari 42 GSR, dan Cakrabuana Agritan (genjah, tahan rebah) untuk sawah dan tadah hujan, Inpari 32 HDB (tahan hawar daun bakteri), serta Inpago 12 Agritan untuk kondisi gogo/kering. Sesuaikan pilihan dengan curah hujan, tingkat kemasaman tanah, dan status hara setempat."
+  },
+  "back": {
+    "tagline": "Kenali. Pantau. Tindak tepat.",
+    "sub": "Pengendalian hama terpadu untuk padi yang produktif, efisien, dan ramah lingkungan di lahan tadah hujan Kalimantan Barat.",
+    "companion": [
+      "Berdampingan dengan Buku Saku PM-AAS",
+      "Disusun oleh Abdullah Umar, SP, MSc · BBP Modernisasi Pertanian Kalbar"
+    ],
+    "org": "Balai Besar Penerapan Modernisasi Pertanian Kalbar"
+  }
+}
