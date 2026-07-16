@@ -160,6 +160,25 @@ export default function Beranda() {
         </div>
       </section>
 
+      {/* Panduan & lainnya */}
+      <Link
+        href="/lainnya"
+        className="mt-2 flex items-center gap-3 rounded-2xl border border-black/10 bg-white p-3.5 shadow-sm transition hover:border-black/25"
+      >
+        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-hama-light text-hama">
+          <Icon name="book" size={20} />
+        </span>
+        <span className="flex-1">
+          <span className="block font-semibold leading-tight">
+            Panduan, tips & lainnya
+          </span>
+          <span className="block text-[13px] text-ink/60">
+            Cara pakai, varietas, referensi, favorit
+          </span>
+        </span>
+        <Icon name="chevron-right" size={18} className="text-ink/30" />
+      </Link>
+
       <p className="mt-6 text-center text-xs text-ink/45">
         {konten.meta.penyusun} · {konten.meta.org}
       </p>

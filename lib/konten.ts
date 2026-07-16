@@ -3,6 +3,12 @@
 import raw from "@/data/konten.json";
 import type { Konten, Entry, Kategori, Qid } from "./types";
 
+export interface QidRow extends Qid {
+  idx: number;
+  slug: string | null;
+  nama: string | null;
+}
+
 export const konten = raw as unknown as Konten;
 
 export const entries: Entry[] = konten.entries;
@@ -62,6 +68,46 @@ export function searchEntries(q: string): Entry[] {
     .filter((x) => x.s > 0)
     .sort((a, b) => b.s - a.s || a.e.no - b.e.no);
   return scored.map((x) => x.e);
+}
+
+const QID_STOP = new Set([
+  "daun",
+  "padi",
+  "dan",
+  "dari",
+  "masalah",
+  "tanaman",
+  "cepat",
+]);
+
+/** Petakan satu baris QID ke entri buku. Dugaan mis. "Tungro (vektor wereng hijau)"
+ *  -> pakai hanya nama utama sebelum "(" agar tak salah tertaut ke vektor. */
+export function qidToEntry(row: Qid): Entry | undefined {
+  const utama = row.dugaan.split("(")[0];
+  const tokens = norm(utama)
+    .split(" ")
+    .filter((w) => w.length >= 3 && !QID_STOP.has(w));
+  if (tokens.length === 0) return undefined;
+  let best: Entry | undefined;
+  let bestScore = 0;
+  for (const e of entries) {
+    const nameTokens = new Set(norm(e.nama).split(" "));
+    let s = 0;
+    for (const w of tokens) if (nameTokens.has(w)) s += 1;
+    if (s > bestScore) {
+      bestScore = s;
+      best = e;
+    }
+  }
+  return bestScore > 0 ? best : undefined;
+}
+
+/** Baris QID lengkap dengan tautan ke entri (dihitung sekali, dipakai /diagnosa). */
+export function qidRows(): QidRow[] {
+  return qid.map((r, idx) => {
+    const e = qidToEntry(r);
+    return { ...r, idx, slug: e?.slug ?? null, nama: e?.nama ?? null };
+  });
 }
 
 /** Entri "mirip" untuk mode perbandingan: prioritas yang disebut di 'pembeda'. */
