@@ -53,7 +53,7 @@ PRODUK = [
         nama="PRIMADECO",
         jenis="Fungisida mikroba",
         komposisi=["Streptomyces thermovulgaris", "Geobacillus thermocatenulatus"],
-        sasaran_umum="Blas (ledakan padi), hawar daun bakteri, layu.",
+        sasaran_umum="Blas, hawar daun bakteri, layu.",
     ),
     dict(
         id="bactoplus",

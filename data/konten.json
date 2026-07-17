@@ -11,7 +11,7 @@
     ],
     "org": "Balai Besar Penerapan Modernisasi Pertanian Kalbar",
     "versi": "1.0",
-    "diekspor_pada": "2026-07-17T15:21:16",
+    "diekspor_pada": "2026-07-17T15:54:01",
     "jumlah_entri": 24
   },
   "sections": [
@@ -1265,7 +1265,7 @@
           "Streptomyces thermovulgaris",
           "Geobacillus thermocatenulatus"
         ],
-        "sasaran_umum": "Blas (ledakan padi), hawar daun bakteri, layu."
+        "sasaran_umum": "Blas, hawar daun bakteri, layu."
       },
       {
         "id": "bactoplus",
