@@ -1,32 +1,54 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { zodOutputFormat } from "@anthropic-ai/sdk/helpers/zod";
-import { getClient, aiConfigured, MODEL, MEDIA_TYPES } from "@/lib/ai";
+import {
+  tokenRouterConfigured,
+  tokenRouterKey,
+  TOKENROUTER_BASE_URL,
+  FOTO_MODEL,
+  MEDIA_TYPES,
+} from "@/lib/ai";
 import { SISTEM_VISI, kelasList } from "@/lib/rag";
 import { allSlugs, entryBySlug } from "@/lib/konten";
 
 export const runtime = "nodejs";
+// Default gpt-4o-mini: latensi ~2-3s. maxDuration cukup 60s; naikkan bila
+// mengganti ke model penalar yang lebih lambat lewat TOKENROUTER_FOTO_MODEL.
 export const maxDuration = 60;
 
-const SLUGS = allSlugs() as [string, ...string[]];
+const KNOWN_SLUGS = new Set(allSlugs());
 
+// Kelas tertutup divalidasi lewat KNOWN_SLUGS saat pemetaan, bukan enum ketat —
+// agar satu slug meleset dari model tidak menggagalkan seluruh hasil.
 const Kandidat = z.object({
-  slug: z.enum(SLUGS),
-  nama: z.string(),
-  kategori: z.enum(["hama", "penyakit", "hara"]),
-  keyakinan: z.number(),
-  alasan: z.string(),
+  slug: z.string(),
+  nama: z.string().optional().default(""),
+  kategori: z.enum(["hama", "penyakit", "hara"]).optional(),
+  keyakinan: z.coerce.number(),
+  alasan: z.string().optional().default(""),
 });
 const Hasil = z.object({
-  kandidat: z.array(Kandidat),
-  cukup_yakin: z.boolean(),
-  catatan: z.string(),
+  kandidat: z.array(Kandidat).default([]),
+  cukup_yakin: z.boolean().default(false),
+  catatan: z.string().optional().default(""),
 });
 
 const MAX_BYTES = 8 * 1024 * 1024; // 8MB base64
 
+// Kontrak JSON eksplisit — endpoint OpenAI-compatible pakai response_format
+// json_object (bukan schema ketat), jadi bentuk keluaran dipandu lewat prompt.
+const FORMAT_JSON = `\n\nWAJIB: balas HANYA satu objek JSON valid (tanpa teks lain, tanpa markdown) berbentuk persis:
+{"kandidat":[{"slug":"<salah satu slug dari DAFTAR KELAS>","nama":"nama gangguan","kategori":"hama|penyakit|hara","keyakinan":0-100,"alasan":"ciri yang teramati"}],"cukup_yakin":true,"catatan":"catatan singkat"}
+Pakai HANYA slug dari DAFTAR KELAS di atas. Bila ragu: kosongkan "kandidat" dan set "cukup_yakin" false.`;
+
+interface ChatResponse {
+  choices?: {
+    finish_reason?: string;
+    message?: { content?: string };
+  }[];
+}
+
 export async function POST(req: Request) {
-  if (!aiConfigured()) {
+  if (!tokenRouterConfigured()) {
     return NextResponse.json(
       {
         degraded: true,
@@ -60,83 +82,134 @@ export async function POST(req: Request) {
     );
   }
 
+  let resp: Response;
   try {
-    const client = getClient();
-    const res = await client.messages.parse({
-      model: MODEL,
-      max_tokens: 2048,
-      system: SISTEM_VISI + kelasList(),
-      messages: [
-        {
-          role: "user",
-          content: [
-            {
-              type: "image",
-              source: {
-                type: "base64",
-                media_type: mediaType as
-                  | "image/jpeg"
-                  | "image/png"
-                  | "image/webp"
-                  | "image/gif",
-                data: image,
+    resp = await fetch(`${TOKENROUTER_BASE_URL}/chat/completions`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${tokenRouterKey()}`,
+      },
+      body: JSON.stringify({
+        // temperature sengaja tidak dikirim demi kompatibilitas lintas model
+        // (sebagian model, mis. kimi-k2.6, hanya menerima nilai 1).
+        // max_tokens longgar: cukup untuk JSON jawaban, dan menampung token
+        // penalaran bila TOKENROUTER_FOTO_MODEL diganti ke model penalar.
+        model: FOTO_MODEL,
+        max_tokens: 4096,
+        response_format: { type: "json_object" },
+        messages: [
+          { role: "system", content: SISTEM_VISI + kelasList() + FORMAT_JSON },
+          {
+            role: "user",
+            content: [
+              {
+                type: "image_url",
+                image_url: { url: `data:${mediaType};base64,${image}` },
               },
-            },
-            {
-              type: "text",
-              text: "Identifikasi gangguan pada foto padi ini. Beri kandidat berurutan dengan keyakinan dan alasan ciri yang teramati. Jika tak yakin, katakan.",
-            },
-          ],
-        },
-      ],
-      output_config: { format: zodOutputFormat(Hasil) },
-    });
-
-    if (res.stop_reason === "refusal") {
-      return NextResponse.json(
-        { error: "Permintaan tidak dapat diproses. Coba foto lain." },
-        { status: 422 },
-      );
-    }
-
-    const parsed = res.parsed_output;
-    if (!parsed) {
-      return NextResponse.json(
-        { error: "Gagal membaca hasil. Coba lagi." },
-        { status: 502 },
-      );
-    }
-
-    // Perkaya kandidat dengan data entri + urutkan menurun; batasi 5.
-    const kandidat = parsed.kandidat
-      .map((k) => {
-        const e = entryBySlug(k.slug);
-        return {
-          slug: k.slug,
-          nama: e?.nama ?? k.nama,
-          kategori: e?.kategori ?? k.kategori,
-          nama_latin: e?.nama_latin ?? "",
-          foto_path: e?.foto.ada_foto ? e.foto.path : null,
-          keyakinan: Math.max(0, Math.min(100, Math.round(k.keyakinan))),
-          alasan: k.alasan,
-        };
-      })
-      .sort((a, b) => b.keyakinan - a.keyakinan)
-      .slice(0, 5);
-
-    return NextResponse.json({
-      kandidat,
-      cukup_yakin: parsed.cukup_yakin && kandidat.length > 0,
-      catatan: parsed.catatan,
+              {
+                type: "text",
+                text: "Identifikasi gangguan pada foto padi ini. Beri kandidat berurutan dengan keyakinan dan alasan ciri yang teramati. Jika tak yakin, katakan.",
+              },
+            ],
+          },
+        ],
+      }),
+      signal: AbortSignal.timeout(45_000),
     });
   } catch (err) {
-    console.error("foto diagnosa error:", err);
-    const e = err as { status?: number; message?: string };
-    const status = e.status === 429 ? 429 : 502;
+    console.error("foto diagnosa fetch error:", err);
+    return NextResponse.json(
+      { error: "Terjadi kesalahan pada layanan AI. Coba lagi nanti." },
+      { status: 502 },
+    );
+  }
+
+  if (!resp.ok) {
+    console.error("foto diagnosa upstream status:", resp.status);
+    const status = resp.status === 429 ? 429 : 502;
     const msg =
-      e.status === 429
+      resp.status === 429
         ? "Layanan AI sedang sibuk. Coba beberapa saat lagi."
         : "Terjadi kesalahan pada layanan AI. Coba lagi nanti.";
     return NextResponse.json({ error: msg }, { status });
+  }
+
+  let data: ChatResponse;
+  try {
+    data = (await resp.json()) as ChatResponse;
+  } catch {
+    return NextResponse.json(
+      { error: "Gagal membaca hasil. Coba lagi." },
+      { status: 502 },
+    );
+  }
+
+  const choice = data.choices?.[0];
+  if (choice?.finish_reason === "content_filter") {
+    return NextResponse.json(
+      { error: "Permintaan tidak dapat diproses. Coba foto lain." },
+      { status: 422 },
+    );
+  }
+
+  const content = choice?.message?.content;
+  if (!content) {
+    return NextResponse.json(
+      { error: "Gagal membaca hasil. Coba lagi." },
+      { status: 502 },
+    );
+  }
+
+  const parsed = Hasil.safeParse(safeJson(content));
+  if (!parsed.success) {
+    console.error("foto diagnosa parse error:", parsed.error?.message);
+    return NextResponse.json(
+      { error: "Gagal membaca hasil. Coba lagi." },
+      { status: 502 },
+    );
+  }
+
+  // Perkaya kandidat dengan data entri, buang slug di luar kelas tertutup,
+  // urutkan menurun; batasi 5.
+  const kandidat = parsed.data.kandidat
+    .filter((k) => KNOWN_SLUGS.has(k.slug))
+    .map((k) => {
+      const e = entryBySlug(k.slug);
+      return {
+        slug: k.slug,
+        nama: e?.nama ?? k.nama,
+        kategori: e?.kategori ?? k.kategori ?? "hama",
+        nama_latin: e?.nama_latin ?? "",
+        foto_path: e?.foto.ada_foto ? e.foto.path : null,
+        keyakinan: Math.max(0, Math.min(100, Math.round(k.keyakinan))),
+        alasan: k.alasan,
+      };
+    })
+    .sort((a, b) => b.keyakinan - a.keyakinan)
+    .slice(0, 5);
+
+  return NextResponse.json({
+    kandidat,
+    cukup_yakin: parsed.data.cukup_yakin && kandidat.length > 0,
+    catatan: parsed.data.catatan,
+  });
+}
+
+/** Ekstrak objek JSON dari konten; toleran bila model membungkus dengan ```json atau teks. */
+function safeJson(text: string): unknown {
+  try {
+    return JSON.parse(text);
+  } catch {
+    const start = text.indexOf("{");
+    const end = text.lastIndexOf("}");
+    if (start >= 0 && end > start) {
+      try {
+        return JSON.parse(text.slice(start, end + 1));
+      } catch {
+        return null;
+      }
+    }
+    return null;
   }
 }

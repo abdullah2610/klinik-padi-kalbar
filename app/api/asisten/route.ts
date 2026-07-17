@@ -1,5 +1,10 @@
 import { NextResponse } from "next/server";
-import { getClient, aiConfigured, MODEL } from "@/lib/ai";
+import {
+  tokenRouterConfigured,
+  tokenRouterKey,
+  TOKENROUTER_BASE_URL,
+  ASISTEN_MODEL,
+} from "@/lib/ai";
 import { retrieve, SISTEM_ASISTEN } from "@/lib/rag";
 
 export const runtime = "nodejs";
@@ -11,7 +16,7 @@ interface Turn {
 }
 
 export async function POST(req: Request) {
-  if (!aiConfigured()) {
+  if (!tokenRouterConfigured()) {
     return NextResponse.json(
       {
         degraded: true,
@@ -57,7 +62,11 @@ export async function POST(req: Request) {
 
   const { context } = retrieve(question, fokus);
 
+  // Format OpenAI-compatible: system sebagai pesan pertama, lalu riwayat, lalu
+  // pertanyaan terbungkus konteks RAG. temperature tidak dikirim demi
+  // kompatibilitas lintas model.
   const messages = [
+    { role: "system" as const, content: SISTEM_ASISTEN },
     ...history.map((t) => ({ role: t.role, content: t.text })),
     {
       role: "user" as const,
@@ -65,52 +74,85 @@ export async function POST(req: Request) {
     },
   ];
 
+  let upstream: Response;
   try {
-    const client = getClient();
-    const stream = client.messages.stream({
-      model: MODEL,
-      max_tokens: 1024,
-      system: SISTEM_ASISTEN,
-      messages,
-    });
-
-    const encoder = new TextEncoder();
-    const rs = new ReadableStream<Uint8Array>({
-      async start(controller) {
-        try {
-          for await (const event of stream) {
-            if (
-              event.type === "content_block_delta" &&
-              event.delta.type === "text_delta"
-            ) {
-              controller.enqueue(encoder.encode(event.delta.text));
-            }
-          }
-        } catch (err) {
-          console.error("asisten stream error:", err);
-          controller.enqueue(
-            encoder.encode("\n\n⚠️ Maaf, terjadi gangguan pada layanan AI."),
-          );
-        } finally {
-          controller.close();
-        }
-      },
-    });
-
-    return new Response(rs, {
+    upstream = await fetch(`${TOKENROUTER_BASE_URL}/chat/completions`, {
+      method: "POST",
       headers: {
-        "Content-Type": "text/plain; charset=utf-8",
-        "Cache-Control": "no-store",
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${tokenRouterKey()}`,
       },
+      body: JSON.stringify({
+        model: ASISTEN_MODEL,
+        max_tokens: 1024,
+        stream: true,
+        messages,
+      }),
+      signal: AbortSignal.timeout(55_000),
     });
   } catch (err) {
-    console.error("asisten error:", err);
-    const e = err as { status?: number };
-    const status = e.status === 429 ? 429 : 502;
+    console.error("asisten fetch error:", err);
+    return NextResponse.json(
+      { error: "Terjadi kesalahan pada asisten. Coba lagi nanti." },
+      { status: 502 },
+    );
+  }
+
+  if (!upstream.ok || !upstream.body) {
+    console.error("asisten upstream status:", upstream.status);
+    const status = upstream.status === 429 ? 429 : 502;
     const msg =
-      e.status === 429
+      upstream.status === 429
         ? "Asisten sedang sibuk. Coba beberapa saat lagi."
         : "Terjadi kesalahan pada asisten. Coba lagi nanti.";
     return NextResponse.json({ error: msg }, { status });
   }
+
+  // Terjemahkan SSE OpenAI-compatible -> teks mentah (kontrak dengan AsistenClient
+  // yang membaca body stream apa adanya).
+  const encoder = new TextEncoder();
+  const decoder = new TextDecoder();
+  const reader = upstream.body.getReader();
+
+  const rs = new ReadableStream<Uint8Array>({
+    async start(controller) {
+      let buf = "";
+      try {
+        for (;;) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          buf += decoder.decode(value, { stream: true });
+          const lines = buf.split("\n");
+          buf = lines.pop() ?? ""; // simpan potongan baris terakhir
+          for (const line of lines) {
+            const t = line.trim();
+            if (!t.startsWith("data:")) continue;
+            const payload = t.slice(5).trim();
+            if (payload === "[DONE]") continue;
+            try {
+              const j = JSON.parse(payload);
+              const delta = j.choices?.[0]?.delta?.content;
+              if (delta) controller.enqueue(encoder.encode(delta));
+            } catch {
+              // abaikan keep-alive / baris non-JSON
+            }
+          }
+        }
+      } catch (err) {
+        console.error("asisten stream error:", err);
+        controller.enqueue(
+          encoder.encode("\n\n⚠️ Maaf, terjadi gangguan pada layanan AI."),
+        );
+      } finally {
+        controller.close();
+      }
+    },
+  });
+
+  return new Response(rs, {
+    headers: {
+      "Content-Type": "text/plain; charset=utf-8",
+      "Cache-Control": "no-store",
+    },
+  });
 }

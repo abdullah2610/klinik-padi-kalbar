@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import AsistenClient from "@/components/AsistenClient";
 import Icon from "@/components/Icon";
-import { aiConfigured } from "@/lib/ai";
+import { tokenRouterConfigured } from "@/lib/ai";
 import { entryBySlug } from "@/lib/konten";
 
 export const metadata: Metadata = {
@@ -20,7 +20,7 @@ export default async function AsistenPage({
   const { tentang } = await searchParams;
   const fokus = tentang ? entryBySlug(tentang) : undefined;
 
-  if (!aiConfigured()) {
+  if (!tokenRouterConfigured()) {
     return (
       <div className="px-4 py-5">
         <h1 className="text-xl font-extrabold">Asisten</h1>

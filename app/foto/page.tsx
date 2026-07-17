@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import FotoClient from "@/components/FotoClient";
 import Icon from "@/components/Icon";
-import { aiConfigured } from "@/lib/ai";
+import { tokenRouterConfigured } from "@/lib/ai";
 
 export const metadata: Metadata = {
   title: "Foto & Diagnosa",
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export const dynamic = "force-dynamic";
 
 export default function FotoPage() {
-  if (!aiConfigured()) {
+  if (!tokenRouterConfigured()) {
     return (
       <div className="px-4 py-5">
         <h1 className="text-xl font-extrabold">Foto & Diagnosa</h1>

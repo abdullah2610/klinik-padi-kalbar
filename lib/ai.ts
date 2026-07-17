@@ -1,20 +1,26 @@
 import "server-only";
-import Anthropic from "@anthropic-ai/sdk";
 
-// Model default mengikuti pedoman: claude-opus-4-8 (vision resolusi tinggi otomatis).
-// Bisa ditimpa via env untuk menekan biaya lapangan (mis. claude-haiku-4-5).
-export const MODEL = process.env.ANTHROPIC_MODEL || "claude-opus-4-8";
+// Provider tunggal untuk fitur AI (Foto & Asisten): TokenRouter (OpenAI-compatible).
+// Endpoint chat completions; model diatur per-fitur lewat env.
+export const TOKENROUTER_BASE_URL =
+  process.env.TOKENROUTER_BASE_URL || "https://api.tokenrouter.com/v1";
 
-/** AI hanya aktif bila kunci API tersedia. UI degrade mulus bila belum diset. */
-export function aiConfigured(): boolean {
-  return Boolean(process.env.ANTHROPIC_API_KEY);
+// Model per fitur — bisa ditimpa via env tanpa ubah kode.
+export const FOTO_MODEL =
+  process.env.TOKENROUTER_FOTO_MODEL || "openai/gpt-4o-mini";
+export const ASISTEN_MODEL =
+  process.env.TOKENROUTER_ASISTEN_MODEL || "deepseek/deepseek-v4-flash";
+
+/** Fitur AI aktif hanya bila kunci TokenRouter tersedia. UI degrade mulus bila belum diset. */
+export function tokenRouterConfigured(): boolean {
+  return Boolean(process.env.TOKENROUTER_API_KEY);
 }
 
-let client: Anthropic | null = null;
-
-export function getClient(): Anthropic {
-  if (!client) client = new Anthropic(); // membaca ANTHROPIC_API_KEY dari env
-  return client;
+/** Kunci TokenRouter; pemanggil wajib cek tokenRouterConfigured() lebih dulu. */
+export function tokenRouterKey(): string {
+  const key = process.env.TOKENROUTER_API_KEY;
+  if (!key) throw new Error("TOKENROUTER_API_KEY belum dikonfigurasi.");
+  return key;
 }
 
 export const MEDIA_TYPES = new Set([
