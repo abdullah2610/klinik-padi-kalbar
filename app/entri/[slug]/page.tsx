@@ -6,12 +6,14 @@ import CategoryBadge from "@/components/CategoryBadge";
 import InfoBlock from "@/components/InfoBlock";
 import EntryActions from "@/components/EntryActions";
 import EntryCard from "@/components/EntryCard";
+import ProdukRekomendasi from "@/components/ProdukRekomendasi";
 import {
   konten,
   entryBySlug,
   allSlugs,
   relatedEntries,
 } from "@/lib/konten";
+import { produkByEntri, CATATAN_APLIKASI } from "@/lib/produk";
 import { katTheme } from "@/lib/theme";
 
 export function generateStaticParams() {
@@ -43,6 +45,7 @@ export default async function DetailEntri({
 
   const t = katTheme(e.kategori);
   const mirip = relatedEntries(e, 3);
+  const rek = produkByEntri(e.slug);
 
   return (
     <article className="pb-6">
@@ -158,6 +161,13 @@ export default async function DetailEntri({
               ))}
             </ol>
           </section>
+
+          {/* Biopestisida rekomendasi (bila sasaran cocok) */}
+          <ProdukRekomendasi
+            produk={rek.produk}
+            catatan={rek.catatan}
+            catatanAplikasi={CATATAN_APLIKASI}
+          />
 
           {e.tip && (
             <InfoBlock icon="bulb" label="Tips lapangan" tone="tip">

@@ -3,8 +3,9 @@
 import { useRef, useState } from "react";
 import Link from "next/link";
 import Icon from "./Icon";
+import ProdukRekomendasi from "./ProdukRekomendasi";
 import { katTheme } from "@/lib/theme";
-import type { Kategori } from "@/lib/types";
+import type { Kategori, Produk } from "@/lib/types";
 
 interface Kandidat {
   slug: string;
@@ -14,6 +15,7 @@ interface Kandidat {
   foto_path: string | null;
   keyakinan: number;
   alasan: string;
+  produk: Produk[];
 }
 interface Hasil {
   kandidat: Kandidat[];
@@ -220,7 +222,8 @@ export default function FotoClient() {
                       />
                     </div>
                     <p className="mt-2 text-[13px] text-ink/70">{k.alasan}</p>
-                    <span className="mt-1 inline-flex items-center gap-1 text-xs font-semibold text-hama">
+                    <ProdukRekomendasi produk={k.produk ?? []} compact />
+                    <span className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-hama">
                       Buka entri & cek ciri pembeda
                       <Icon name="chevron-right" size={14} />
                     </span>

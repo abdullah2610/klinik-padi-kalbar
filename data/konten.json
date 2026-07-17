@@ -11,7 +11,7 @@
     ],
     "org": "Balai Besar Penerapan Modernisasi Pertanian Kalbar",
     "versi": "1.0",
-    "diekspor_pada": "2026-07-16T20:41:59",
+    "diekspor_pada": "2026-07-17T15:21:16",
     "jumlah_entri": 24
   },
   "sections": [
@@ -1205,6 +1205,180 @@
       ]
     }
   ],
+  "produk": {
+    "katalog": [
+      {
+        "id": "vertiplus",
+        "nama": "VERTIPLUS",
+        "jenis": "Insektisida mikroba",
+        "komposisi": [
+          "Verticillium lecanii",
+          "Beauveria bassiana"
+        ],
+        "sasaran_umum": "Hama pengisap: wereng, kutu kebul, kutu putih, psyllidae."
+      },
+      {
+        "id": "metarizep",
+        "nama": "METARIZEP",
+        "jenis": "Insektisida mikroba",
+        "komposisi": [
+          "Metarhizium anisopliae",
+          "Beauveria bassiana"
+        ],
+        "sasaran_umum": "Wereng coklat, kutu daun, thrips."
+      },
+      {
+        "id": "entomobac",
+        "nama": "ENTOMOBAC",
+        "jenis": "Insektisida mikroba",
+        "komposisi": [
+          "Metarhizium anisopliae",
+          "Beauveria bassiana"
+        ],
+        "sasaran_umum": "Penggerek (daun/buah), wereng, psyllidae, larva kumbang."
+      },
+      {
+        "id": "paenamaxi",
+        "nama": "PAENAMAXI",
+        "jenis": "Fungisida mikroba",
+        "komposisi": [
+          "Paenibacillus polymyxa",
+          "Bacillus amyloliquefaciens"
+        ],
+        "sasaran_umum": "Blas, hawar daun bakteri, bercak daun."
+      },
+      {
+        "id": "biotracol",
+        "nama": "BIOTRACOL",
+        "jenis": "Fungisida mikroba",
+        "komposisi": [
+          "Streptomyces thermovulgaris",
+          "Trichoderma harzianum"
+        ],
+        "sasaran_umum": "Blas, hawar daun bakteri, layu, busuk."
+      },
+      {
+        "id": "primadeco",
+        "nama": "PRIMADECO",
+        "jenis": "Fungisida mikroba",
+        "komposisi": [
+          "Streptomyces thermovulgaris",
+          "Geobacillus thermocatenulatus"
+        ],
+        "sasaran_umum": "Blas (ledakan padi), hawar daun bakteri, layu."
+      },
+      {
+        "id": "bactoplus",
+        "nama": "BACTOPLUS",
+        "jenis": "Pupuk hayati",
+        "komposisi": [
+          "Azospirillum brasilense",
+          "Pseudomonas fluorescens",
+          "Trichoderma asperellum"
+        ],
+        "sasaran_umum": "Perbaiki serapan hara & pulihkan kesuburan tanah; hemat pupuk s/d 30%."
+      }
+    ],
+    "rekomendasi": {
+      "blas-blast": {
+        "produk_ids": [
+          "paenamaxi",
+          "biotracol",
+          "primadeco"
+        ],
+        "catatan": ""
+      },
+      "hawar-daun-bakteri-hdb-kresek": {
+        "produk_ids": [
+          "paenamaxi",
+          "biotracol",
+          "primadeco"
+        ],
+        "catatan": ""
+      },
+      "hawar-pelepah-daun": {
+        "produk_ids": [
+          "biotracol"
+        ],
+        "catatan": ""
+      },
+      "wereng-batang-coklat-wbc": {
+        "produk_ids": [
+          "metarizep",
+          "vertiplus",
+          "entomobac"
+        ],
+        "catatan": ""
+      },
+      "wereng-hijau": {
+        "produk_ids": [
+          "vertiplus",
+          "metarizep",
+          "entomobac"
+        ],
+        "catatan": ""
+      },
+      "tungro": {
+        "produk_ids": [
+          "vertiplus",
+          "metarizep",
+          "entomobac"
+        ],
+        "catatan": "Produk menekan vektor (wereng hijau) penyebar virus, bukan virusnya. Utamakan pencegahan: varietas tahan + kendali wereng sejak dini."
+      },
+      "penggerek-batang-padi": {
+        "produk_ids": [
+          "entomobac",
+          "metarizep"
+        ],
+        "catatan": ""
+      },
+      "hama-putih-palsu-pelipat-daun": {
+        "produk_ids": [
+          "entomobac"
+        ],
+        "catatan": ""
+      },
+      "belalang-ulat-grayak": {
+        "produk_ids": [
+          "entomobac",
+          "metarizep"
+        ],
+        "catatan": ""
+      },
+      "defisiensi-nitrogen-n": {
+        "produk_ids": [
+          "bactoplus"
+        ],
+        "catatan": ""
+      },
+      "defisiensi-fosfor-p": {
+        "produk_ids": [
+          "bactoplus"
+        ],
+        "catatan": ""
+      },
+      "defisiensi-kalium-k": {
+        "produk_ids": [
+          "bactoplus"
+        ],
+        "catatan": ""
+      },
+      "defisiensi-zink-zn": {
+        "produk_ids": [
+          "bactoplus"
+        ],
+        "catatan": ""
+      },
+      "kemasaman-tanah-keracunan-aluminium-al": {
+        "produk_ids": [
+          "bactoplus"
+        ],
+        "catatan": ""
+      }
+    },
+    "catatan_aplikasi": "Dosis & cara pakai: ikuti petunjuk pada kemasan."
+  },
   "tabel_identifikasi_cepat": [
     {
       "kategori": "hama",

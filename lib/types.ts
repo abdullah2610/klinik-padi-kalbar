@@ -80,6 +80,25 @@ export interface Qid {
   cara_cek: string;
 }
 
+export interface Produk {
+  id: string;
+  nama: string;
+  jenis: string;
+  komposisi: string[];
+  sasaran_umum: string;
+}
+
+export interface RekomendasiProduk {
+  produk_ids: string[];
+  catatan: string;
+}
+
+export interface KatalogProduk {
+  katalog: Produk[];
+  rekomendasi: Record<string, RekomendasiProduk>;
+  catatan_aplikasi: string;
+}
+
 export interface Referensi {
   urutan: number;
   teks: string;
@@ -106,6 +125,7 @@ export interface Konten {
   tentang: string[];
   tentang_box: TentangBox;
   entries: Entry[];
+  produk: KatalogProduk;
   tabel_identifikasi_cepat: Qid[];
   referensi: Referensi[];
   catatan_referensi: string;

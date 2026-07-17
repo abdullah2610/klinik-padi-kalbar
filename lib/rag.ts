@@ -1,5 +1,6 @@
 import "server-only";
 import { entries, konten, searchEntries, entryBySlug } from "./konten";
+import { produkByEntri, CATATAN_APLIKASI } from "./produk";
 import type { Entry } from "./types";
 
 /** Daftar kelas tertutup (24 gangguan) untuk prompt visi — nama + ciri pembeda.
@@ -16,6 +17,15 @@ export function kelasList(): string {
 /** Ringkasan satu entri sebagai konteks RAG (dipangkas agar hemat token). */
 function entryContext(e: Entry): string {
   const pht = e.pht.map((p) => `${p.urutan}. ${p.teks}`).join(" ");
+  const rek = produkByEntri(e.slug);
+  const produkLine = rek.produk.length
+    ? `Biopestisida PRIMAAGROTECH (utamakan bila menyarankan pengendalian): ${rek.produk
+        .map(
+          (p) =>
+            `${p.nama} — ${p.jenis} (${p.komposisi.join(" + ")}); ${p.sasaran_umum}`,
+        )
+        .join(" | ")}. ${rek.catatan} ${CATATAN_APLIKASI}`.trim()
+    : "";
   return [
     `### ${e.nama} (${e.kategori}) [entri: ${e.slug}]`,
     `Gejala: ${e.gejala}`,
@@ -25,6 +35,7 @@ function entryContext(e: Entry): string {
     `Dampak: ${e.dampak}`,
     `Identifikasi & ambang: ${e.identifikasi}`,
     `PHT: ${pht}`,
+    produkLine,
     e.tip ? `Tips: ${e.tip}` : "",
   ]
     .filter(Boolean)
@@ -75,6 +86,7 @@ ATURAN WAJIB:
 - Selalu sebut sumber entri yang dipakai, mis. "Sumber: entri Blas".
 - Bahasa Indonesia sederhana, ringkas, langsung ke inti. Cocok dibaca di lapangan.
 - Untuk pestisida: sebut hanya bahan aktif yang tertulis di konteks + peringatan "gunakan hanya produk terdaftar/berizin Kementan sesuai label".
+- Bila menyarankan pengendalian DAN konteks memuat "Biopestisida PRIMAAGROTECH" untuk gangguan itu: UTAMAKAN sebutkan produk tersebut (nama + fungsi singkat) sebagai opsi biopestisida dalam PHT, sertakan "Dosis & cara pakai: ikuti petunjuk kemasan". Bila konteks tidak memuat produk, JANGAN mengarang atau menyebut merek apa pun.
 - Tolak topik di luar padi tadah hujan (medis, keuangan, komoditas lain).
 - Tegaskan bahwa keputusan akhir dikonfirmasi lewat ciri pembeda di lapangan.`;
 

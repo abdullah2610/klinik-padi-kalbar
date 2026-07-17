@@ -79,6 +79,34 @@ def entry_to_dict(e, kategori):
     }
 
 
+def build_produk(C, entries):
+    """Katalog biopestisida + rekomendasi per-entri. Validasi silang: setiap
+    slug entri & id produk pada REKOMENDASI harus dikenal (gagal cepat)."""
+    katalog = list(getattr(C, "PRODUK", []))
+    rekomendasi_src = getattr(C, "REKOMENDASI", {})
+    if not katalog:
+        return {"katalog": [], "rekomendasi": {}, "catatan_aplikasi": ""}
+
+    slug_set = {e["slug"] for e in entries}
+    id_set = {p["id"] for p in katalog}
+
+    rekomendasi = {}
+    for slug, r in rekomendasi_src.items():
+        if slug not in slug_set:
+            raise ValueError(f"REKOMENDASI merujuk slug entri tak dikenal: {slug!r}")
+        ids = r.get("produk", [])
+        for pid in ids:
+            if pid not in id_set:
+                raise ValueError(f"REKOMENDASI[{slug!r}] merujuk id produk tak dikenal: {pid!r}")
+        rekomendasi[slug] = {"produk_ids": ids, "catatan": r.get("catatan", "")}
+
+    return {
+        "katalog": katalog,
+        "rekomendasi": rekomendasi,
+        "catatan_aplikasi": getattr(C, "CATATAN_APLIKASI", ""),
+    }
+
+
 def build(C):
     sections_meta = []
     entries = []
@@ -106,6 +134,8 @@ def build(C):
         "cara_cek": cek,
     } for (k, gj, dug, cek) in C.QID]
 
+    produk = build_produk(C, entries)
+
     data = {
         "meta": {
             "judul": " ".join(C.BOOK.get("title_lines", [])).strip(),
@@ -126,6 +156,7 @@ def build(C):
         "tentang": list(getattr(C, "ABOUT", [])),
         "tentang_box": getattr(C, "ABOUT_BOX", {}),
         "entries": entries,
+        "produk": produk,
         "tabel_identifikasi_cepat": qid,
         "referensi": [{"urutan": i + 1, "teks": r} for i, r in enumerate(getattr(C, "REFS", []))],
         "catatan_referensi": getattr(C, "REF_NOTE", ""),
@@ -161,6 +192,9 @@ def main():
     print(f"  referensi    : {len(data['referensi'])}")
     print(f"  tips         : {len(data['tips'])}")
     print(f"  entri berfoto: {berfoto}/{n} (sisanya pakai saran_foto)")
+    pr = data.get("produk", {})
+    print(f"  produk        : {len(pr.get('katalog', []))} katalog, "
+          f"{len(pr.get('rekomendasi', {}))} entri ber-rekomendasi")
 
 
 if __name__ == "__main__":

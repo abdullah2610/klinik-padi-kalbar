@@ -9,6 +9,7 @@ import {
 } from "@/lib/ai";
 import { SISTEM_VISI, kelasList } from "@/lib/rag";
 import { allSlugs, entryBySlug } from "@/lib/konten";
+import { produkByEntri } from "@/lib/produk";
 
 export const runtime = "nodejs";
 // Default gpt-4o-mini: latensi ~2-3s. maxDuration cukup 60s; naikkan bila
@@ -184,6 +185,7 @@ export async function POST(req: Request) {
         foto_path: e?.foto.ada_foto ? e.foto.path : null,
         keyakinan: Math.max(0, Math.min(100, Math.round(k.keyakinan))),
         alasan: k.alasan,
+        produk: produkByEntri(k.slug).produk,
       };
     })
     .sort((a, b) => b.keyakinan - a.keyakinan)

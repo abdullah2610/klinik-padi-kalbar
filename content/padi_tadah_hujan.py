@@ -4,6 +4,7 @@ Disusun oleh Abdullah Umar, SP, MSc — Balai Besar Penerapan Modernisasi Pertan
 Entri (24 gangguan) diimpor dari entries_padi_tadah_hujan.py.
 """
 from entries_padi_tadah_hujan import HAMA, PENYAKIT, HARA, QID, REFS, TIPS, VARIETAS
+from produk_primaagrotech import PRODUK, REKOMENDASI, CATATAN_APLIKASI
 
 # ---------- SAMPUL & IDENTITAS ----------
 BOOK = dict(
