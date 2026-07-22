@@ -69,8 +69,12 @@ def entry_to_dict(e, kategori):
         "tip": e.get("tip", ""),
         "pht": [{"urutan": i + 1, "teks": t} for i, t in enumerate(e.get("pht", []))],
         "foto": {
+            # "file" = berkas sumber (PNG) di assets/photos; "path" menunjuk
+            # keluaran WebP yang dihasilkan sync_public.mjs saat build (~88%
+            # lebih kecil). Ekstensi sengaja dipaksa .webp agar konten.json
+            # selaras dengan berkas yang benar-benar disalin ke public/.
             "file": foto,
-            "path": (f"assets/photos/{foto}" if foto else None),
+            "path": (f"assets/photos/{os.path.splitext(foto)[0]}.webp" if foto else None),
             "caption": e.get("cap"),
             "saran_foto": e.get("suggest"),
             "ada_foto": bool(foto),

@@ -11,7 +11,7 @@
     ],
     "org": "Balai Besar Penerapan Modernisasi Pertanian Kalbar",
     "versi": "1.0",
-    "diekspor_pada": "2026-07-17T15:54:01",
+    "diekspor_pada": "2026-07-22T22:45:42",
     "jumlah_entri": 24
   },
   "sections": [
@@ -161,7 +161,7 @@
       ],
       "foto": {
         "file": "penggerek.png",
-        "path": "assets/photos/penggerek.png",
+        "path": "assets/photos/penggerek.webp",
         "caption": "Gejala sundep (anakan mati, mudah dicabut) akibat penggerek batang.",
         "saran_foto": null,
         "ada_foto": true
@@ -215,7 +215,7 @@
       ],
       "foto": {
         "file": "wbc.png",
-        "path": "assets/photos/wbc.png",
+        "path": "assets/photos/wbc.webp",
         "caption": "Koloni wereng batang coklat berkerumun pada pangkal batang padi.",
         "saran_foto": null,
         "ada_foto": true
@@ -311,7 +311,7 @@
       ],
       "foto": {
         "file": "tikus_tbs.png",
-        "path": "assets/photos/tikus_tbs.png",
+        "path": "assets/photos/tikus_tbs.webp",
         "caption": "Sistem bubu perangkap (TBS/LTBS) dengan pagar plastik dan tanaman perangkap.",
         "saran_foto": null,
         "ada_foto": true
@@ -360,7 +360,7 @@
       ],
       "foto": {
         "file": "keong.png",
-        "path": "assets/photos/keong.png",
+        "path": "assets/photos/keong.webp",
         "caption": "Kelompok telur keong mas berwarna merah muda menempel pada batang di atas air.",
         "saran_foto": null,
         "ada_foto": true
@@ -405,7 +405,7 @@
       ],
       "foto": {
         "file": "walangsangit.png",
-        "path": "assets/photos/walangsangit.png",
+        "path": "assets/photos/walangsangit.webp",
         "caption": "Walang sangit dewasa (langsing, hijau kecoklatan) pada malai padi.",
         "saran_foto": null,
         "ada_foto": true
@@ -446,7 +446,7 @@
       ],
       "foto": {
         "file": "orongorong.png",
-        "path": "assets/photos/orongorong.png",
+        "path": "assets/photos/orongorong.webp",
         "caption": "Orong-orong (anjing tanah) dan pangkal tanaman yang terpotong.",
         "saran_foto": null,
         "ada_foto": true
@@ -666,7 +666,7 @@
       ],
       "foto": {
         "file": "hdb.png",
-        "path": "assets/photos/hdb.png",
+        "path": "assets/photos/hdb.webp",
         "caption": "Hawar pada tepi daun: bercak abu-abu kekuningan meluas dari tepi/ujung daun.",
         "saran_foto": null,
         "ada_foto": true
@@ -717,7 +717,7 @@
       ],
       "foto": {
         "file": "blas_daun.png",
-        "path": "assets/photos/blas_daun.png",
+        "path": "assets/photos/blas_daun.webp",
         "caption": "Blas daun: bercak belah ketupat, pusat abu-abu/putih, tepi coklat.",
         "saran_foto": null,
         "ada_foto": true
@@ -763,7 +763,7 @@
       ],
       "foto": {
         "file": "tungro.png",
-        "path": "assets/photos/tungro.png",
+        "path": "assets/photos/tungro.webp",
         "caption": "Gejala tungro: daun menguning-jingga dari ujung, tanaman kerdil.",
         "saran_foto": null,
         "ada_foto": true
@@ -810,7 +810,7 @@
       ],
       "foto": {
         "file": "bercak_coklat.png",
-        "path": "assets/photos/bercak_coklat.png",
+        "path": "assets/photos/bercak_coklat.webp",
         "caption": "Bercak coklat oval sebesar biji wijen tersebar merata pada daun.",
         "saran_foto": null,
         "ada_foto": true
@@ -852,7 +852,7 @@
       ],
       "foto": {
         "file": "hawar_pelepah.png",
-        "path": "assets/photos/hawar_pelepah.png",
+        "path": "assets/photos/hawar_pelepah.webp",
         "caption": "Bercak oval kelabu-hijau pada pelepah dekat permukaan air (hawar pelepah).",
         "saran_foto": null,
         "ada_foto": true
@@ -893,7 +893,7 @@
       ],
       "foto": {
         "file": "hdj.png",
-        "path": "assets/photos/hdj.png",
+        "path": "assets/photos/hdj.webp",
         "caption": "Garis/bercak jingga pada helai daun (hawar daun jingga).",
         "saran_foto": null,
         "ada_foto": true
