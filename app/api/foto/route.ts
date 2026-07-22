@@ -10,6 +10,7 @@ import {
 import { SISTEM_VISI, kelasList } from "@/lib/rag";
 import { allSlugs, entryBySlug } from "@/lib/konten";
 import { produkByEntri } from "@/lib/produk";
+import { klaimKuotaGlobal } from "@/lib/kuota";
 
 export const runtime = "nodejs";
 // Default gpt-4o-mini: latensi ~2-3s. maxDuration cukup 60s; naikkan bila
@@ -33,7 +34,12 @@ const Hasil = z.object({
   catatan: z.string().optional().default(""),
 });
 
-const MAX_BYTES = 8 * 1024 * 1024; // 8MB base64
+// Batas body Vercel Functions 4.5MB, jadi 8MB sebelumnya tak pernah tercapai:
+// request ditolak platform sebelum handler jalan dan pengguna melihat error
+// mentah, bukan pesan berbahasa Indonesia di bawah. Klien mengompres ke 1280px
+// (lib/foto.ts) yang pada foto 12MP terburuk menghasilkan ~200KB base64;
+// 1.5MB memberi ruang longgar sekaligus tetap menolak unggahan mentah.
+const MAX_BYTES = 1.5 * 1024 * 1024; // panjang string base64
 
 // Kontrak JSON eksplisit — endpoint OpenAI-compatible pakai response_format
 // json_object (bukan schema ketat), jadi bentuk keluaran dipandu lewat prompt.
@@ -80,6 +86,18 @@ export async function POST(req: Request) {
     return NextResponse.json(
       { error: "Foto terlalu besar. Coba foto beresolusi lebih kecil." },
       { status: 413 },
+    );
+  }
+
+  // Plafon global harian (pengaman biaya). Diklaim hanya setelah permintaan
+  // valid, tepat sebelum memanggil model. Lihat lib/kuota.ts untuk batasannya.
+  if (!klaimKuotaGlobal("foto").ok) {
+    return NextResponse.json(
+      {
+        error:
+          "Kuota diagnosa foto harian aplikasi sudah tercapai. Coba lagi besok, atau gunakan Tabel Gejala.",
+      },
+      { status: 429 },
     );
   }
 

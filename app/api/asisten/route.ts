@@ -6,6 +6,7 @@ import {
   ASISTEN_MODEL,
 } from "@/lib/ai";
 import { retrieve, SISTEM_ASISTEN } from "@/lib/rag";
+import { klaimKuotaGlobal } from "@/lib/kuota";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -59,6 +60,18 @@ export async function POST(req: Request) {
         )
         .slice(-6)
     : [];
+
+  // Plafon global harian (pengaman biaya). Diklaim setelah pertanyaan valid,
+  // sebelum RAG & panggilan model. Batas asisten lebih longgar dari foto.
+  if (!klaimKuotaGlobal("asisten").ok) {
+    return NextResponse.json(
+      {
+        error:
+          "Kuota asisten harian aplikasi sudah tercapai. Coba lagi besok, atau gunakan Telusur / Tabel Gejala.",
+      },
+      { status: 429 },
+    );
+  }
 
   const { context } = retrieve(question, fokus);
 

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Icon from "./Icon";
+import { catatKuota, sisaKuota } from "@/lib/kuota-klien";
 
 interface Msg {
   role: "user" | "assistant";
@@ -37,6 +38,13 @@ export default function AsistenClient({
   async function tanya(q: string) {
     const question = q.trim();
     if (!question || busy) return;
+    // Jatah per-perangkat habis: tolak sebelum kirim, arahkan ke fitur non-AI.
+    if (sisaKuota("asisten") <= 0) {
+      setError(
+        "Jatah tanya asisten hari ini untuk perangkat ini sudah habis. Coba lagi besok, atau gunakan Telusur / Tabel Gejala.",
+      );
+      return;
+    }
     setError(null);
     setInput("");
 
@@ -57,6 +65,9 @@ export default function AsistenClient({
         setMsgs((m) => m.slice(0, -1)); // buang placeholder
         return;
       }
+
+      // Permintaan diterima server -> hitung satu pemakaian jatah perangkat.
+      catatKuota("asisten");
 
       const reader = res.body.getReader();
       const dec = new TextDecoder();

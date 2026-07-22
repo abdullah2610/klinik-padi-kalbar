@@ -1,9 +1,11 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Icon from "./Icon";
 import ProdukRekomendasi from "./ProdukRekomendasi";
+import { siapkanFoto } from "@/lib/foto";
+import { batasKuota, catatKuota, sisaKuota } from "@/lib/kuota-klien";
 import { katTheme } from "@/lib/theme";
 import type { Kategori, Produk } from "@/lib/types";
 
@@ -23,41 +25,51 @@ interface Hasil {
   catatan: string;
 }
 
-async function siapkanFoto(
-  file: File,
-): Promise<{ data: string; mediaType: string; preview: string }> {
-  const bitmap = await createImageBitmap(file);
-  const maks = 1280;
-  const skala = Math.min(1, maks / Math.max(bitmap.width, bitmap.height));
-  const w = Math.round(bitmap.width * skala);
-  const h = Math.round(bitmap.height * skala);
-  const canvas = document.createElement("canvas");
-  canvas.width = w;
-  canvas.height = h;
-  const ctx = canvas.getContext("2d");
-  if (!ctx) throw new Error("Kanvas tidak didukung.");
-  ctx.drawImage(bitmap, 0, 0, w, h);
-  const dataUrl = canvas.toDataURL("image/jpeg", 0.82);
-  return { data: dataUrl.split(",")[1], mediaType: "image/jpeg", preview: dataUrl };
-}
-
 export default function FotoClient() {
   const inputRef = useRef<HTMLInputElement>(null);
+  const previewRef = useRef<string | null>(null);
   const [preview, setPreview] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [hasil, setHasil] = useState<Hasil | null>(null);
   const [error, setError] = useState<string | null>(null);
+  // null selama SSR/sebelum mount; localStorage baru terbaca di klien.
+  const [sisa, setSisa] = useState<number | null>(null);
+
+  useEffect(() => {
+    setSisa(sisaKuota("foto"));
+    return () => {
+      if (previewRef.current) URL.revokeObjectURL(previewRef.current);
+    };
+  }, []);
+
+  // Pratinjau memakai object URL (bukan data URL) agar HP kelas bawah tak
+  // menahan seluruh gambar sebagai string di memori. Wajib dilepas manual.
+  function pasangPreview(url: string | null) {
+    if (previewRef.current) URL.revokeObjectURL(previewRef.current);
+    previewRef.current = url;
+    setPreview(url);
+  }
+
+  const kuotaHabis = sisa !== null && sisa <= 0;
 
   async function onPilih(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];
+    if (inputRef.current) inputRef.current.value = ""; // izinkan pilih ulang berkas sama
     if (!file) return;
+    // Jatah per-perangkat habis: hentikan sebelum kompresi/unggah.
+    if (sisaKuota("foto") <= 0) {
+      setSisa(0);
+      return;
+    }
     setError(null);
     setHasil(null);
+    setLoading(true);
     try {
-      const { data, mediaType, preview } = await siapkanFoto(file);
-      setPreview(preview);
-      await kirim(data, mediaType);
+      const foto = await siapkanFoto(file);
+      pasangPreview(URL.createObjectURL(foto.blob));
+      await kirim(foto.data, foto.mediaType);
     } catch {
+      setLoading(false);
       setError("Gagal membaca foto. Coba foto lain.");
     }
   }
@@ -76,6 +88,9 @@ export default function FotoClient() {
         setError(json.error ?? "Gagal memproses foto.");
         return;
       }
+      // Hitung pemakaian hanya saat diagnosa berhasil — kegagalan tak memakan jatah.
+      catatKuota("foto");
+      setSisa(sisaKuota("foto"));
       setHasil(json as Hasil);
     } catch {
       setError("Tidak dapat terhubung. Periksa koneksi.");
@@ -85,7 +100,7 @@ export default function FotoClient() {
   }
 
   function reset() {
-    setPreview(null);
+    pasangPreview(null);
     setHasil(null);
     setError(null);
     if (inputRef.current) inputRef.current.value = "";
@@ -99,6 +114,33 @@ export default function FotoClient() {
         gangguan buku. <span className="font-semibold">Dugaan, bukan kepastian</span> —
         konfirmasi lewat ciri pembeda di entri.
       </p>
+
+      {sisa !== null && !kuotaHabis && (
+        <p className="mt-2 text-xs text-ink/50">
+          Sisa jatah diagnosa hari ini:{" "}
+          <span className="font-semibold text-ink/70">{sisa}</span> dari{" "}
+          {batasKuota("foto")}.
+        </p>
+      )}
+
+      {kuotaHabis && (
+        <div className="mt-4 rounded-xl border border-padi/40 bg-padi-light p-4 text-sm text-ink/80">
+          <p className="flex items-center gap-2 font-semibold">
+            <Icon name="info" size={18} className="text-[#8a6d00]" /> Jatah
+            diagnosa foto hari ini habis
+          </p>
+          <p className="mt-1">
+            Batas {batasKuota("foto")} diagnosa/hari untuk perangkat ini sudah
+            tercapai. Jatah pulih besok.
+          </p>
+          <Link
+            href="/diagnosa"
+            className="mt-2 inline-block font-semibold text-hama underline"
+          >
+            Gunakan Tabel Gejala →
+          </Link>
+        </div>
+      )}
 
       <input
         ref={inputRef}
@@ -116,7 +158,7 @@ export default function FotoClient() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={preview} alt="Foto gejala" className="max-h-72 w-full object-cover" />
           </div>
-        ) : (
+        ) : kuotaHabis ? null : (
           <button
             type="button"
             onClick={() => inputRef.current?.click()}
