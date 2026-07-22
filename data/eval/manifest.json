@@ -1,0 +1,31 @@
+{
+  "korpus": "foto uji diagnosa visi padi (lapangan 12MP)",
+  "catatan": "label = slug entri buku yang BENAR (ground truth). null = belum dilabeli. Isi label untuk mengukur akurasi.",
+  "foto": [
+    {
+      "file": "IMG20251204103426.jpg",
+      "label": "blas-blast",
+      "sumber": "lapangan"
+    },
+    {
+      "file": "IMG_20210914_144514.jpg",
+      "label": "blas-blast",
+      "sumber": "lapangan"
+    },
+    {
+      "file": "IMG_20210914_144551.jpg",
+      "label": "blas-blast",
+      "sumber": "lapangan"
+    },
+    {
+      "file": "IMG_20210914_144717.jpg",
+      "label": "hawar-pelepah-daun",
+      "sumber": "lapangan"
+    },
+    {
+      "file": "IMG_20210914_144725.jpg",
+      "label": "blas-blast",
+      "sumber": "lapangan"
+    }
+  ]
+}
